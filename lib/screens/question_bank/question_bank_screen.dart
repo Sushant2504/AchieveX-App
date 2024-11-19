@@ -481,6 +481,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 ),
               ),
             ),
+
+            
             Padding(
               padding: const EdgeInsets.all(3.0),
               child: CircleAvatar(
@@ -498,6 +500,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 ),
               ),
             ),
+
+
             Padding(
               padding: const EdgeInsets.all(3.0),
               child: CircleAvatar(
@@ -535,6 +539,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
             ),
           ],
         ),
+
+
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
