@@ -230,15 +230,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
           width: width * 0.8,
           decoration: BoxDecoration(
             color: Colors.white,
-            // borderRadius: BorderRadius.circular(10),
-            // boxShadow: [
-            //   BoxShadow(
-            //     color: Colors.grey.withOpacity(0.5),
-            //     spreadRadius: 3,
-            //     blurRadius: 4,
-            //     offset: Offset(0, 3),
-            //   ),
-            // ],
+            
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -464,6 +456,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 ),
               ),
             ),
+
+
             Padding(
               padding: const EdgeInsets.all(3.0),
               child: CircleAvatar(
