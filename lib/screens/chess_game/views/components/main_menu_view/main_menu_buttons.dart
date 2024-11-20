@@ -1,5 +1,4 @@
 import 'package:achievex/screens/chess_game/model/app_model.dart';
-import 'package:achievex/screens/chess_game/views/components/shared/rounded_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../chess_view.dart';

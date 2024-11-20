@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:achievex/utils/chapter_name.dart';
 
 class Class11Maths extends StatelessWidget {
+  const Class11Maths({super.key});
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -19,7 +21,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 10.0),
+                padding: const EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[0]),
               ),
             ),
@@ -28,7 +30,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[1]),
               ),
             ),
@@ -37,7 +39,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[2]),
               ),
             ),
@@ -46,7 +48,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[3]),
               ),
             ),
@@ -55,7 +57,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[4]),
               ),
             ),
@@ -64,7 +66,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[5]),
               ),
             ),
@@ -73,7 +75,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[6]),
               ),
             ),
@@ -82,7 +84,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[7]),
               ),
             ),
@@ -91,7 +93,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[8]),
               ),
             ),
@@ -100,7 +102,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[9]),
               ),
             ),
@@ -109,7 +111,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[10]),
               ),
             ),
@@ -118,7 +120,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[11]),
               ),
             ),
@@ -127,7 +129,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[12]),
               ),
             ),
@@ -136,7 +138,7 @@ class Class11Maths extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, M_11_Chapters[13]),
               ),
             ),
@@ -170,7 +172,7 @@ class Class11Maths extends StatelessWidget {
             padding: const EdgeInsets.only(left: 5.0),
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -181,7 +183,7 @@ class Class11Maths extends StatelessWidget {
           const SizedBox(
             width: 9.0,
           ),
-          Icon(
+          const Icon(
             Icons.arrow_forward,
             size: 45.0,
             color: Colors.white,

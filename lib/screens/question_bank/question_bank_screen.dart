@@ -29,6 +29,8 @@ var _QuestionIndex = 0;
 
 
 class QuestionBankScreen extends StatefulWidget {
+  const QuestionBankScreen({super.key});
+
   @override
   _QuestionBankScreenState createState() => _QuestionBankScreenState();
 }
@@ -51,7 +53,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Chapter Name',
               style: TextStyle(
                 fontSize: 18,
@@ -67,14 +69,14 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 seconds = (time % 60).toInt();
                 return Text(
                   '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,    
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
                 );
               },
-              interval: Duration(milliseconds: 100),
+              interval: const Duration(milliseconds: 100),
               onFinished: (dynamic time) {
                 print('Timer is done!');
  
@@ -95,13 +97,13 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "SUBMIT",
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.normal,
-                      color: const Color.fromARGB(255, 75, 18, 119),
+                      color: Color.fromARGB(255, 75, 18, 119),
                     ),
                   ),
                 ),
@@ -111,8 +113,10 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
         ),
         backgroundColor: const Color.fromARGB(255, 16, 12, 148),
       ),
+
+      
       drawer: CustomDrawer(height, width, QuestionCount),
-      body: Container(
+      body: SizedBox(
         height: height * 0.9,
         width: width,
         child: Column(
@@ -132,7 +136,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                           color: const Color.fromARGB(255, 16, 12, 148),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             "subject",
                             style: TextStyle(
@@ -150,7 +154,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 height: height * 0.06,
                 width: width,
                 color: const Color.fromARGB(255, 16, 12, 148),
-                child: Row(
+                child: const Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
 
@@ -187,11 +191,11 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 child: Container(
                   height: height * 0.08,
                   width: width,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
+                  decoration: const BoxDecoration(
+                    color: Colors.white, 
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(5.0),
                     child: Text(
                       "CO2 connot be obtained by heating: ",
                       style: TextStyle(
@@ -228,7 +232,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
         content: Container(
           height: height * 0.37,
           width: width * 0.8,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             
           ),
@@ -236,7 +240,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 "The Time Remaining:",
                 style: TextStyle(
                   fontSize: 18,
@@ -247,7 +251,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
 
               Text(
                   '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
@@ -276,7 +280,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                       ),
 
 
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "RESUME",
                           style: TextStyle(
@@ -302,7 +306,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                       ),
 
                       
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "SUBMIT",
                           style: TextStyle(
@@ -339,14 +343,14 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 3,
             blurRadius: 4,
-            offset: Offset(0, 3),
+            offset: const Offset(0, 3),
           ),
         ],
       ),
       child: Center(
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.normal,
             color: Colors.black,
@@ -369,7 +373,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 3,
               blurRadius: 4,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -389,11 +393,11 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                         color: Colors.grey.withOpacity(0.5),
                         spreadRadius: 3,
                         blurRadius: 4,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Chemistry",
                       style: TextStyle(
@@ -430,7 +434,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 child: Center(
                   child: Text(
                     s[0],
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
                       color: Colors.black,
@@ -447,7 +451,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 child: Center(
                   child: Text(
                     s[1],
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
                       color: Colors.black,
@@ -466,7 +470,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 child: Center(
                   child: Text(
                     s[2],
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
                       color: Colors.black,
@@ -485,7 +489,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 child: Center(
                   child: Text(
                     s[3],
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
                       color: Colors.black,
@@ -504,7 +508,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 child: Center(
                   child: Text(
                     s[4],
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
                       color: Colors.black,
@@ -529,7 +533,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 3,
               blurRadius: 4,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -539,8 +543,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(3.0),
+              const Padding(
+                padding: EdgeInsets.all(3.0),
 
                 
                 child: Row(
@@ -548,11 +552,11 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           radius: 15.0,
                           backgroundColor:
-                              const Color.fromARGB(255, 42, 91, 44),
+                              Color.fromARGB(255, 42, 91, 44),
                           child: Text(
                             "0",
                             style: TextStyle(
@@ -572,7 +576,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           radius: 15.0,
                           backgroundColor: Colors.red,
@@ -598,14 +602,14 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
               ),
 
 
-              Padding(
-                padding: const EdgeInsets.all(3.0),
+              const Padding(
+                padding: EdgeInsets.all(3.0),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           radius: 15.0,
                           backgroundColor: Colors.grey,
@@ -628,10 +632,10 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           radius: 15.0,
-                          backgroundColor: const Color.fromARGB(255, 40, 6, 66),
+                          backgroundColor: Color.fromARGB(255, 40, 6, 66),
                           child: Text(
                             "0",
                             style: TextStyle(
@@ -663,7 +667,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                         child: Stack(
                           alignment: Alignment.bottomRight,
                           children: [
-                            CircleAvatar(
+                            const CircleAvatar(
                               radius: 15.0,
                               backgroundImage: NetworkImage(
                                   'https://example.com/avatar.jpg'),
@@ -682,7 +686,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                               child: Container(
                                 width: 10,
                                 height: 10,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.green,
                                   shape: BoxShape.circle,
                                 ),
@@ -691,8 +695,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(3.0),
+                      const Padding(
+                        padding: EdgeInsets.all(3.0),
                         child: Text(
                           "Answered and Marked for review",
                           style: TextStyle(
@@ -722,7 +726,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 3,
               blurRadius: 4,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -730,18 +734,18 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.all(3.0),
+              const Padding(
+                padding: EdgeInsets.all(3.0),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           radius: 10.0,
                           backgroundColor:
-                              const Color.fromARGB(255, 42, 91, 44),
+                              Color.fromARGB(255, 42, 91, 44),
                         ),
                       ),
                       Text(
@@ -753,7 +757,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           radius: 10.0,
                           backgroundColor: Colors.red,
@@ -771,14 +775,14 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
               ),
 
 
-              Padding(
-                padding: const EdgeInsets.all(3.0),
+              const Padding(
+                padding: EdgeInsets.all(3.0),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           radius: 10.0,
                           backgroundColor: Colors.grey,
@@ -793,10 +797,10 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        padding: EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           radius: 10.0,
-                          backgroundColor: const Color.fromARGB(255, 40, 6, 66),
+                          backgroundColor: Color.fromARGB(255, 40, 6, 66),
                         ),
                       ),
                       Text(
@@ -822,7 +826,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                         child: Stack(
                           alignment: Alignment.bottomRight,
                           children: [
-                            CircleAvatar(
+                            const CircleAvatar(
                               radius: 10,
                               backgroundImage: NetworkImage(
                                   'https://example.com/avatar.jpg'),
@@ -833,7 +837,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                               child: Container(
                                 width: 10,
                                 height: 10,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.green,
                                   shape: BoxShape.circle,
                                 ),
@@ -844,8 +848,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                       ),
 
 
-                      Padding(
-                        padding: const EdgeInsets.all(3.0),
+                      const Padding(
+                        padding: EdgeInsets.all(3.0),
                         child: Text(
                           "Answered and Marked for review",
                           style: TextStyle(
@@ -866,7 +870,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
 
   Widget CustomDrawer(var height, var width, List<List<String>> Questioncount) {
     return IconTheme(
-      data: IconThemeData(color: Colors.white),
+      data: const IconThemeData(color: Colors.white),
       child: Drawer(
         child: Container(
           height: height * 0.7,
@@ -902,7 +906,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
       width: width * 0.2,
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 222, 221, 221),
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(10.0),
           topRight: Radius.circular(10.0),
           bottomLeft: Radius.circular(10.0),
@@ -916,7 +920,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
       child: Center(
         child: Text(
           name,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.normal,
             color: Colors.black,
@@ -930,8 +934,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
     return Container(
       height: height * 0.04,
       width: width * 0.32,
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 16, 12, 148),
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(255, 16, 12, 148),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(10.0),
           topRight: Radius.circular(10.0),
@@ -942,7 +946,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
       child: Center(
         child: Text(
           name,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.normal,
             color: Colors.white,
@@ -1017,7 +1021,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
   }
 
   Widget Option(var height, var width, String text, String option) {
-    return Container(
+    return SizedBox(
       height: height * 0.08,
       child: Row(
           // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -1033,7 +1037,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                   children: [
                     Text(
                       text,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16.0,
                         fontWeight: FontWeight.bold,
@@ -1050,7 +1054,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 option,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.normal,
                   color: Colors.black,
@@ -1063,13 +1067,13 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
 
   Widget BottomButtom(var height, var width, String text) {
     return Padding(
-      padding: EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(5.0),
       child: Container(
         height: height * 0.04,
         width: width * 0.1,
         decoration: BoxDecoration(
             color: Colors.grey,
-            borderRadius: BorderRadius.horizontal(
+            borderRadius: const BorderRadius.horizontal(
               left: Radius.circular(15),
               right: Radius.circular(15),
             ),
@@ -1080,7 +1084,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.normal,
               fontStyle: FontStyle.normal,
@@ -1093,7 +1097,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
   }
 
   Widget OptionCard(var height, var width, String option, String optiontext) {
-    return Container(
+    return SizedBox(
       height: height * 0.05,
       width: width,
       child: Row(
@@ -1101,13 +1105,13 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 8.0),
+            padding: const EdgeInsets.only(left: 8.0),
             child: CircleAvatar(
               backgroundColor: Colors.grey,
               radius: 30,
               child: Text(
                 option,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.normal,
@@ -1121,7 +1125,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
           ),
           Text(
             optiontext,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.normal,

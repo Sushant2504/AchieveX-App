@@ -17,6 +17,8 @@ final TextEditingController _controller = TextEditingController();
 bool _isButtonEnabled = false;
 
 class InstructionPage extends StatefulWidget {
+  const InstructionPage({super.key});
+
   @override
   _InstructionPageState createState() => _InstructionPageState();
 }
@@ -100,12 +102,12 @@ class _InstructionPageState extends State<InstructionPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -191,12 +193,12 @@ class _InstructionPageState extends State<InstructionPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -283,12 +285,12 @@ class _InstructionPageState extends State<InstructionPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -376,7 +378,7 @@ class _InstructionPageState extends State<InstructionPage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(left: 15, top: 10),
+          margin: const EdgeInsets.only(left: 15, top: 10),
           height: 4,
           width: 4,
           decoration: BoxDecoration(
@@ -385,10 +387,10 @@ class _InstructionPageState extends State<InstructionPage> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Text(
             temp,
-            style: TextStyle(
+            style: const TextStyle(
                 fontFamily: 'Promt',
                 fontWeight: FontWeight.w400,
                 color: Colors.black,
@@ -412,7 +414,7 @@ class _InstructionPageState extends State<InstructionPage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             width: width * 0.63,
             child: TextField(
               decoration: InputDecoration(
@@ -438,7 +440,7 @@ class _InstructionPageState extends State<InstructionPage> {
               child: InkWell(
                 onTap: () =>
                     Navigator.pushNamed(context, RoutesName.QuestionereScreen),
-                child: Text(
+                child: const Text(
                   'Start Exam',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,

@@ -5,7 +5,6 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
 
 class MemoryMatrixGame extends StatefulWidget {
   const MemoryMatrixGame({

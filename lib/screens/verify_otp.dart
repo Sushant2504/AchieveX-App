@@ -19,6 +19,8 @@ import 'package:achievex/provider/appdata_provider.dart';
 import '../utils/colors.dart';
 
 class VerifyOtpScreen extends StatefulWidget {
+  const VerifyOtpScreen({super.key});
+
   
  
   @override
@@ -44,6 +46,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
     _otplessFlutterPlugin.setHeadlessCallback(onHeadlessResult);
   }
 
+  @override
   Widget build(BuildContext context) {
     final routesArgs =
         ModalRoute.of(context)?.settings.arguments as Map<String, String>;
@@ -86,7 +89,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
               Container(
                 margin: const EdgeInsets.only(bottom: 40),
                 child: Text(
-                  "+91 " + number,
+                  "+91 $number",
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 18,
@@ -110,7 +113,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
               TextButton(
                 style: ButtonStyle(
                   foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blue),
+                      WidgetStateProperty.all<Color>(Colors.blue),
                 ),
                 onPressed: () async {
                   //  Search(); // only for the testing purpose
@@ -130,7 +133,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "otp not received!",
                     style: TextStyle(
                       fontSize: 14,
@@ -140,7 +143,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                   const SizedBox(height: 5),
                   InkWell(
                     onTap: () => sendOtpless(number),
-                    child: Text(
+                    child: const Text(
                       "Resend otp",
                       style: TextStyle(
                         fontSize: 14,
@@ -224,15 +227,15 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Otp Authentication failed !'),
-          content: Text(
+          title: const Text('Otp Authentication failed !'),
+          content: const Text(
               'It may be Server issue , wait for some time or Please enter the correct otp or click on resend otp'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );

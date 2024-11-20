@@ -19,6 +19,8 @@ import 'package:achievex/provider/appdata_provider.dart';
 final _otplessFlutterPlugin = Otpless();
 
 class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
+
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
 }
@@ -29,6 +31,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController mobileNumberController = TextEditingController();
   bool _isLoading = false;
 
+  @override
   void initState() {
     super.initState();
 
@@ -299,7 +302,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ],
                           ),
-                          child: _isLoading ? Center(child: CircularProgressIndicator()) : InkWell(
+                          child: _isLoading ? const Center(child: CircularProgressIndicator()) : InkWell(
                             onTap: () async {
                               setState(() {
                                     _isLoading = true;
@@ -335,7 +338,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     height: 24, // Set the height of the image
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 3,
                                 ),
                                 const Text(
@@ -428,8 +431,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Otp Authentication failed !'),
-          content: Center(
+          title: const Text('Otp Authentication failed !'),
+          content: const Center(
             child: Text(
                 'It may be Server issue , wait for some time or Please enter the correct otp or click on resend otp'),
           ),
@@ -438,7 +441,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );

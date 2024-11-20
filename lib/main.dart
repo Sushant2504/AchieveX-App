@@ -44,7 +44,7 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final Otpless _otpless = Otpless();
+  final Otpless otpless = Otpless();
   // _otpless.init();
 
   await Firebase.initializeApp(

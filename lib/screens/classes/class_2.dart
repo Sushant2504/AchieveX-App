@@ -2,6 +2,8 @@ import 'package:achievex/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 class Class_12 extends StatelessWidget {
+  const Class_12({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,7 +151,7 @@ class Class_12 extends StatelessWidget {
     Color textColor = Colors.black,
   }) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Center(
         child: Container(
           height: 110,

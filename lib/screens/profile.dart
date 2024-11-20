@@ -80,7 +80,7 @@ class Profile extends StatelessWidget {
                                   return Column(
                                     children: [
                                       Text('Name: ${data['name']}', 
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
                                       ),),
@@ -88,14 +88,14 @@ class Profile extends StatelessWidget {
                                       const SizedBox(height: 6),
                                       Text(
                                           'Phone Number: ${data['phoneNumber']}',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                              color: Colors.white,
                                               fontSize: 14,
                                           ),),
                                     ],
                                   );
                                 } else {
-                                  return CircularProgressIndicator();
+                                  return const CircularProgressIndicator();
                                 }
                               },
                             ),

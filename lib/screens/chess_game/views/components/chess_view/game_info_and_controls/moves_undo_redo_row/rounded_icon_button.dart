@@ -13,10 +13,10 @@ class RoundedIconButton extends StatelessWidget {
       height: 60,
       child: CupertinoButton(
         padding: EdgeInsets.zero,
-        color: Color(0x20000000),
-        child: Icon(icon, color: Color(0xffffffff)),
-        borderRadius: BorderRadius.all(Radius.circular(15)),
+        color: const Color(0x20000000),
+        borderRadius: const BorderRadius.all(Radius.circular(15)),
         onPressed: onPressed,
+        child: Icon(icon, color: Color(0xffffffff)),
       ),
     );
   }

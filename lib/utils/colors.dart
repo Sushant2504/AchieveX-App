@@ -22,7 +22,7 @@ class AppColors {
   static const tipsBoxColor = Color(0xFF767EF4);
   static const formBgColor = Color(0xFFF9F9F9);
 
-  static Decoration backtheme = BoxDecoration(
+  static Decoration backtheme = const BoxDecoration(
     gradient: LinearGradient(
       colors: [
         Colors.lightBlue, // Light blue color

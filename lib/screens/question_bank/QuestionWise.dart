@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 
 class Questionwise extends StatelessWidget{
+  const Questionwise({super.key});
+
     @override
     Widget build(BuildContext context) {
         return Scaffold(
             appBar: AppBar(
-                title: Row(
+                title: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
 

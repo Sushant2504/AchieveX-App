@@ -1,11 +1,9 @@
 import 'package:achievex/data/model/response/appdata_model.dart';
 import 'package:achievex/data/repository/app_setting_repo.dart';
-import 'package:achievex/provider/auth_provider.dart';
 import 'package:achievex/ui/theme.dart';
 import 'package:achievex/utils/app_constants.dart';
 import 'package:achievex/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../data/model/response/base/api_response.dart';
 import '../helper/api_checker.dart';

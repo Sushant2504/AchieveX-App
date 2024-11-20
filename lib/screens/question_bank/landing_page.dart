@@ -2,17 +2,19 @@ import 'package:achievex/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
+  const LandingPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -235,7 +237,7 @@ class LandingPage extends StatelessWidget {
                 ),
 
 
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
 

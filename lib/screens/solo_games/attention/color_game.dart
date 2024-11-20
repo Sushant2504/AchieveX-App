@@ -295,7 +295,7 @@ class _ColorGameState extends State<ColorGame> {
                         ),
                         child: Text(
                           color,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 24,
                             color: Colors.black,
                           ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:achievex/utils/chapter_name.dart';
 
 class Class12Bio extends StatelessWidget {
+  const Class12Bio({super.key});
+
   @override
   Widget BuildContext(context) {
     var height = MediaQuery.of(context).size.height;
@@ -21,7 +23,7 @@ class Class12Bio extends StatelessWidget {
   }
 
   Widget ChapterCard(var height, var width, context, String title) {
-    return Container(
+    return SizedBox(
       height: height * 0.2,
       width: width,
       child: Row(
@@ -32,7 +34,7 @@ class Class12Bio extends StatelessWidget {
 
             Text(
                title,
-               style: TextStyle(
+               style: const TextStyle(
                   fontSize: 20, 
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -42,7 +44,7 @@ class Class12Bio extends StatelessWidget {
 
             const SizedBox(width: 9.0,),
 
-            Icon(
+            const Icon(
               Icons.arrow_forward,
               size: 45.0,
               color: Colors.grey,

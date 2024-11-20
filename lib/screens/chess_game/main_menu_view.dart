@@ -47,7 +47,7 @@ class _MainMenuViewState extends State<MainMenuView> {
                 GameOptions(appModel),
                 const SizedBox(height: 10),
                 MainMenuButtons(appModel),
-                BottomPadding(),
+                const BottomPadding(),
               ],
             ),
           );

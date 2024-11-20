@@ -5,6 +5,8 @@ import 'package:path/path.dart';
 import '../../utils/app_constants.dart';
 
 class ChooseExam extends StatelessWidget {
+  const ChooseExam({super.key});
+
 
 
   @override
@@ -12,12 +14,12 @@ class ChooseExam extends StatelessWidget {
     return Scaffold(
        body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -230,7 +232,7 @@ class ChooseExam extends StatelessWidget {
                   ),
                 ),
                 
-                SizedBox(
+                const SizedBox(
                   height: 8.0,
                 ),
                 

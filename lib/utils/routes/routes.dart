@@ -202,11 +202,11 @@ class Routes {
 
       case RoutesName.chessHomeScreen:
         return MaterialPageRoute(
-            builder: (BuildContext context) => MainMenuView());
+            builder: (BuildContext context) => const MainMenuView());
 
       case RoutesName.sudokuHomeScreen:
         return MaterialPageRoute(
-            builder: (BuildContext context) => SudokuHomeScreen());
+            builder: (BuildContext context) => const SudokuHomeScreen());
 
       case RoutesName.brainGameScreen:
         return MaterialPageRoute(

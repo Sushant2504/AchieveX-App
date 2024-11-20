@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class OtpForm extends StatelessWidget{
+  const OtpForm({super.key});
+
     @override
   Widget build(BuildContext context) {
      return Form(

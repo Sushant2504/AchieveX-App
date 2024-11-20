@@ -15,7 +15,7 @@ class GameStatus extends StatelessWidget {
         children: [
           TextRegular(_getStatus(appModel)),
           !appModel.gameOver && appModel.playerCount == 1 && appModel.isAIsTurn
-              ? CupertinoActivityIndicator(radius: 12)
+              ? const CupertinoActivityIndicator(radius: 12)
               : Container()
         ],
       ),

@@ -55,7 +55,7 @@ class _ManageTaskScreenState extends State<ManageNotePriorityScreen> {
     return Scaffold(
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: ExpandableFab(
-        overlayStyle: ExpandableFabOverlayStyle(blur: 3),
+        overlayStyle: const ExpandableFabOverlayStyle(blur: 3),
         openButtonBuilder: RotateFloatingActionButtonBuilder(
           child: const Icon(
             Icons.add,

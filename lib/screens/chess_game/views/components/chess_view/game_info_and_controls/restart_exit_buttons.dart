@@ -1,6 +1,4 @@
 import 'package:achievex/screens/chess_game/model/app_model.dart';
-import 'package:achievex/screens/chess_game/views/components/chess_view/game_info_and_controls/rounded_alert_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RestartExitButtons extends StatelessWidget {

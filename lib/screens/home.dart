@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const Page1(),
     const Search(),
     const Navigation(),
-    GamesScreen(),
+    const GamesScreen(),
     Profile(),
   ];
 

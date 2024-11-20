@@ -31,7 +31,7 @@ class RoundedAlertButton extends StatelessWidget {
                 },
               ),
               CupertinoButton(
-                child: TextDefault('Cancel', color: CupertinoColors.activeBlue),
+                child: const TextDefault('Cancel', color: CupertinoColors.activeBlue),
                 onPressed: () {
                   Navigator.pop(context);
                 },

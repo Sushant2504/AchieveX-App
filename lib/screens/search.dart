@@ -10,8 +10,6 @@ import 'package:provider/provider.dart';
 import '../utils/colors.dart';
 import 'demotivation_screen.dart';
 import 'feelinglow_screen.dart';
-import 'package:achievex/screens/choose_exam.dart';
-import 'package:achievex/screens/question_bank/question_bank_screen.dart';
 
 class Search extends StatelessWidget {
   const Search({super.key});

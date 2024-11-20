@@ -21,7 +21,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 10.0),
+                padding: const EdgeInsets.fromLTRB(10.0, 30.0, 10.0, 10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[0]),
               ),
             ),
@@ -30,7 +30,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[1]),
               ),
             ),
@@ -39,7 +39,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[2]),
               ),
             ),
@@ -48,7 +48,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[3]),
               ),
             ),
@@ -57,7 +57,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[4]),
               ),
             ),
@@ -66,7 +66,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[5]),
               ),
             ),
@@ -75,7 +75,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[6]),
               ),
             ),
@@ -84,7 +84,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[7]),
               ),
             ),
@@ -94,7 +94,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[8]),
               ),
             ),
@@ -103,7 +103,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[9]),
               ),
             ),
@@ -113,7 +113,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[10]),
               ),
             ),
@@ -123,7 +123,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[11]),
               ),
             ),
@@ -133,7 +133,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[12]),
               ),
             ),
@@ -142,7 +142,7 @@ class Class11PhyScreen extends StatelessWidget {
               onTap: () =>
                   Navigator.pushNamed(context, RoutesName.Instruction),
               child: Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: ChapterCard(height, width, context, P_11_Chapters[13]),
               ),
             ),
@@ -171,10 +171,10 @@ class Class11PhyScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 5.0),
+            padding: const EdgeInsets.only(left: 5.0),
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -185,7 +185,7 @@ class Class11PhyScreen extends StatelessWidget {
           const SizedBox(
             width: 9.0,
           ),
-          Icon(
+          const Icon(
             Icons.arrow_forward,
             size: 40.0,
             color: Colors.white,

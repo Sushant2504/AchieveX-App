@@ -12,6 +12,8 @@ import '../utils/app_constants.dart';
 import 'package:achievex/screens/verify_otp.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -211,7 +213,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           height: 19,
                         ),
                         _isLoading
-                            ? Center(child: CircularProgressIndicator())
+                            ? const Center(child: CircularProgressIndicator())
                             : InkWell(
                                 onTap: () async {
                                   // socialLogin("GMAIL");
@@ -356,15 +358,15 @@ class _LoginScreenState extends State<LoginScreen> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Otp Authentication failed !'),
-          content: Text(
+          title: const Text('Otp Authentication failed !'),
+          content: const Text(
               'It may be Server issue , wait for some time or Please enter the correct otp or click on resend otp'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );

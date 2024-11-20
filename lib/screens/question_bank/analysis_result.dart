@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class AnalysisResult extends StatefulWidget {
+  const AnalysisResult({super.key});
+
   @override
   _AnalysisResultState createState() => _AnalysisResultState();
 }
@@ -18,7 +20,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Chapter Name',
                 style: TextStyle(
                   fontSize: 18,
@@ -38,13 +40,13 @@ class _AnalysisResultState extends State<AnalysisResult> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "RETEST",
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.normal,
-                      color: const Color.fromARGB(255, 75, 18, 119),
+                      color: Color.fromARGB(255, 75, 18, 119),
                     ),
                   ),
                 ),
@@ -61,13 +63,13 @@ class _AnalysisResultState extends State<AnalysisResult> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "BACK",
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.normal,
-                        color: const Color.fromARGB(255, 75, 18, 119),
+                        color: Color.fromARGB(255, 75, 18, 119),
                       ),
                     ),
                   ),
@@ -78,22 +80,22 @@ class _AnalysisResultState extends State<AnalysisResult> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 5.0),
-                  child: Container(
+                  child: SizedBox(
                     height: height * 0.1,
                     width: width,
-                    child: Column(
+                    child: const Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(5.0),
+                            padding: EdgeInsets.all(5.0),
                             child: Text(
                               "ADVANCED TEST FEEDBACK",
                               style: TextStyle(
@@ -104,7 +106,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 5.0, left: 5.0),
+                            padding: EdgeInsets.only(top: 5.0, left: 5.0),
                             child: Text(
                               "Exam Summary",
                               style: TextStyle(
@@ -130,10 +132,10 @@ class _AnalysisResultState extends State<AnalysisResult> {
                         Container(
                           height: height * 0.04,
                           width: width * 0.5,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 241, 95, 84),
+                          decoration: const BoxDecoration(
+                            color: Color.fromARGB(255, 241, 95, 84),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -153,10 +155,10 @@ class _AnalysisResultState extends State<AnalysisResult> {
                         Container(
                           height: height * 0.04,
                           width: width * 0.5,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 244, 145, 137),
+                          decoration: const BoxDecoration(
+                            color: Color.fromARGB(255, 244, 145, 137),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -188,7 +190,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 3,
                           blurRadius: 4,
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                         ),
                       ],
                     ),
@@ -201,9 +203,9 @@ class _AnalysisResultState extends State<AnalysisResult> {
                             lineWidth: 13.0,
                             animation: true,
                             percent: 0.7,
-                            center: new Text(
+                            center: Text(
                               "70.0%",
-                              style: new TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20.0,
                               ),
@@ -212,7 +214,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
                                 "Capability to Crack this topic",
-                                style: new TextStyle(
+                                style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17.0,
                                 ),
@@ -223,7 +225,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                 const Color.fromARGB(255, 16, 12, 148),
                           ),
                           const SizedBox(height: 5.0),
-                          Text(
+                          const Text(
                             "Rank: 30",
                             style: TextStyle(
                               fontSize: 18,
@@ -237,8 +239,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
                 ),
                 Container(
                   height: height * 0.05,
-                  decoration: BoxDecoration(),
-                  child: Column(
+                  decoration: const BoxDecoration(),
+                  child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -254,7 +256,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
+                  child: SizedBox(
                     height: height * 0.1,
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -296,11 +298,11 @@ class _AnalysisResultState extends State<AnalysisResult> {
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 5,
                           blurRadius: 7,
-                          offset: Offset(0, 3), // changes
+                          offset: const Offset(0, 3), // changes
                         ),
                       ],
                     ),
-                    child: Column(
+                    child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -309,7 +311,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 10.0),
+                                  padding: EdgeInsets.only(top: 10.0),
                                   child: Text(
                                     "Total number of Questions: ",
                                     style: TextStyle(
@@ -320,7 +322,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 13),
+                                  padding: EdgeInsets.only(top: 13),
                                   child: Text(
                                     "30",
                                     style: TextStyle(
@@ -331,13 +333,14 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                   ),
                                 ),
                               ]),
-                          const SizedBox(height: 15),
+                          SizedBox(height: 15),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               CircleAvatar(
                                 radius: 20,
+                                backgroundColor: Colors.green,
                                 child: Text(
                                   "0",
                                   style: TextStyle(
@@ -346,9 +349,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                backgroundColor: Colors.green,
                               ),
-                              const SizedBox(width: 5),
+                              SizedBox(width: 5),
                               Text(
                                 "Answered",
                                 style: TextStyle(
@@ -357,9 +359,11 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                   color: Colors.black,
                                 ),
                               ),
-                              const SizedBox(width: 10),
+                              SizedBox(width: 10),
                               CircleAvatar(
                                 radius: 20,
+                                backgroundColor:
+                                    Color.fromARGB(255, 88, 34, 214),
                                 child: Text(
                                   "0",
                                   style: TextStyle(
@@ -368,10 +372,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                backgroundColor:
-                                    const Color.fromARGB(255, 88, 34, 214),
                               ),
-                              const SizedBox(width: 5),
+                              SizedBox(width: 5),
                               Text(
                                 "Answered and marked for review",
                                 style: TextStyle(
@@ -382,13 +384,15 @@ class _AnalysisResultState extends State<AnalysisResult> {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 15),
+                          SizedBox(height: 15),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               CircleAvatar(
                                 radius: 20,
+                                backgroundColor:
+                                    Color.fromARGB(255, 88, 34, 214),
                                 child: Text(
                                   "0",
                                   style: TextStyle(
@@ -397,10 +401,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                backgroundColor:
-                                    Color.fromARGB(255, 88, 34, 214),
                               ),
-                              const SizedBox(
+                              SizedBox(
                                 width: 4,
                               ),
                               Text(
@@ -411,9 +413,10 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                   color: Colors.black,
                                 ),
                               ),
-                              const SizedBox(width: 25),
+                              SizedBox(width: 25),
                               CircleAvatar(
                                 radius: 20,
+                                backgroundColor: Colors.red,
                                 child: Text(
                                   "30",
                                   style: TextStyle(
@@ -422,9 +425,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                backgroundColor: Colors.red,
                               ),
-                              const SizedBox(width: 4),
+                              SizedBox(width: 4),
                               Text(
                                 "Not Answered",
                                 style: TextStyle(
@@ -433,7 +435,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                   color: Colors.black,
                                 ),
                               ),
-                              const SizedBox(width: 5),
+                              SizedBox(width: 5),
                             ],
                           ),
                           Row(
@@ -442,6 +444,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
                             children: [
                               CircleAvatar(
                                 radius: 20,
+                                backgroundColor: Colors.grey,
                                 child: Text(
                                   "0",
                                   style: TextStyle(
@@ -450,9 +453,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
                                     color: Colors.white,
                                   ),
                                 ),
-                                backgroundColor: Colors.grey,
                               ),
-                              const SizedBox(width: 5),
+                              SizedBox(width: 5),
                               Text(
                                 "Not Answered",
                                 style: TextStyle(
@@ -493,7 +495,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 5,
               blurRadius: 7,
-              offset: Offset(0, 3), // changes
+              offset: const Offset(0, 3), // changes
             ),
           ]),
       child: Column(
@@ -502,8 +504,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
         children: [
           Container(
             height: 40,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 118, 239, 122),
+            decoration: const BoxDecoration(
+              color: Color.fromARGB(255, 118, 239, 122),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10),
                 topRight: Radius.circular(10),
@@ -513,7 +515,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Physics",
                   style: TextStyle(
                     fontSize: 18,
@@ -522,10 +524,10 @@ class _AnalysisResultState extends State<AnalysisResult> {
                   ),
                 ),
                 const SizedBox(width: 100),
-                Container(
+                SizedBox(
                   height: 40,
                   width: 30,
-                  child: Column(
+                  child: const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -557,8 +559,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
           ),
 
 
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               "Number of Questions: \t \t \t 30",
               style: TextStyle(
@@ -570,8 +572,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
           ),
 
 
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               "Answered: \t \t \t \t \t \t \t \t \t \t \t \t \t \t \t 1",
               style: TextStyle(
@@ -583,8 +585,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
           ),
 
           
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               "Not Answered: \t \t \t \t \t \t \t \t \t \t 29",
               style: TextStyle(
@@ -596,8 +598,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
           ),
 
 
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               "Marked for Review: \t \t \t \t \t \t 29",
               style: TextStyle(
@@ -609,8 +611,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
           ),
 
           
-          Padding(
-            padding: const EdgeInsets.all(8.0),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               "Not Visited: \t \t \t \t \t \t \t \t \t \t \t \t \t \t 0",
               style: TextStyle(
@@ -638,7 +640,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 5,
               blurRadius: 7,
-              offset: Offset(0, 3), // Shadow position
+              offset: const Offset(0, 3), // Shadow position
             ),
           ],
         ),
@@ -647,8 +649,8 @@ class _AnalysisResultState extends State<AnalysisResult> {
           children: [
             Container(
               height: 40,
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 16, 12, 148),
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 16, 12, 148),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
@@ -675,7 +677,7 @@ class _AnalysisResultState extends State<AnalysisResult> {
             ),
             Container(
               height: height * 0.06,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(10),
