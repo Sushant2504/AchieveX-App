@@ -27,6 +27,12 @@ List<List<String>> QuestionCount = [
 
 var _QuestionIndex = 0;
 
+List<Color> optionbgcolor = [
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+  Colors.grey,
+];
 
 class QuestionBankScreen extends StatefulWidget {
   const QuestionBankScreen({super.key});
@@ -41,7 +47,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
   late int seconds;
   late int minutes;
 
-  
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -61,7 +66,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 fontWeight: FontWeight.normal,
               ),
             ),
-
             Countdown(
               seconds: 3600,
               build: (BuildContext context, double time) {
@@ -70,7 +74,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 return Text(
                   '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
                   style: const TextStyle(
-                    color: Colors.white,    
+                    color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
                   ),
@@ -79,16 +83,13 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
               interval: const Duration(milliseconds: 100),
               onFinished: (dynamic time) {
                 print('Timer is done!');
- 
-                
+
                 OnsubmitPopup(height, width);
               },
             ),
-
-
             InkWell(
               onTap: () {
-                   OnsubmitPopup(height, width);
+                OnsubmitPopup(height, width);
               },
               child: Container(
                 height: height * 0.04,
@@ -114,8 +115,10 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
         backgroundColor: const Color.fromARGB(255, 16, 12, 148),
       ),
 
-      
+
       drawer: CustomDrawer(height, width, QuestionCount),
+
+       
       body: SizedBox(
         height: height * 0.9,
         width: width,
@@ -157,8 +160,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 child: const Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-
-
                       Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
@@ -192,7 +193,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                   height: height * 0.08,
                   width: width,
                   decoration: const BoxDecoration(
-                    color: Colors.white, 
+                    color: Colors.white,
                   ),
                   child: const Padding(
                     padding: EdgeInsets.all(5.0),
@@ -209,13 +210,45 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 ),
               ),
               Liner(height, width),
-              Option(height, width, option[0], optiontext[0]),
+              InkWell(
+                onTap: () {
+                  optionbgcolor[0] = Colors.blue;
+                  optionbgcolor[1] = Colors.grey;
+                  optionbgcolor[2] = Colors.grey;
+                  optionbgcolor[3] = Colors.grey;
+                },
+                child: Option(
+                    height, width, option[0], optiontext[0], optionbgcolor[0]),
+              ),
               Liner(height, width),
-              Option(height, width, option[1], optiontext[1]),
+              InkWell(
+                  onTap: () {
+                    optionbgcolor[0] = Colors.grey;
+                    optionbgcolor[1] = Colors.blue;
+                    optionbgcolor[2] = Colors.grey;
+                    optionbgcolor[3] = Colors.grey;
+                  },
+                  child: Option(height, width, option[1], optiontext[1],
+                      optionbgcolor[1])),
               Liner(height, width),
-              Option(height, width, option[2], optiontext[2]),
+              InkWell(
+                  onTap: () {
+                    optionbgcolor[0] = Colors.grey;
+                    optionbgcolor[1] = Colors.grey;
+                    optionbgcolor[2] = Colors.blue;
+                    optionbgcolor[3] = Colors.grey;
+                  },
+                  child: Option(height, width, option[2], optiontext[2],
+                      optionbgcolor[2])),
               Liner(height, width),
-              Option(height, width, option[3], optiontext[3]),
+              InkWell(
+                  onTap: () {
+                    optionbgcolor[0] = Colors.grey;
+                    optionbgcolor[1] = Colors.grey;
+                    optionbgcolor[2] = Colors.grey;
+                    optionbgcolor[3] = Colors.blue;
+                  },
+                  child: Option(height, width, option[3], optiontext[3], optionbgcolor[3])),
               Liner(height, width),
               const SizedBox(height: 230),
               BottomBar(height, width),
@@ -234,7 +267,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
           width: width * 0.8,
           decoration: const BoxDecoration(
             color: Colors.white,
-            
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -248,38 +280,27 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                   color: Colors.grey,
                 ),
               ),
-
               Text(
-                  '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.normal,
-                  ),
+                '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
-              
-
               onSubmitStat(height, width),
-
               const SizedBox(height: 30.0),
-
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-
                   children: [
-
                     Container(
                       height: height * 0.04,
                       width: width * 0.2,
-
-
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 75, 18, 119),
                         borderRadius: BorderRadius.circular(10),
                       ),
-
-
                       child: const Center(
                         child: Text(
                           "RESUME",
@@ -290,13 +311,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                           ),
                         ),
                       ),
-
-
                     ),
-
                     const SizedBox(width: 20.0),
-
-
                     Container(
                       height: height * 0.04,
                       width: width * 0.2,
@@ -304,8 +320,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                         color: const Color.fromARGB(255, 75, 18, 119),
                         borderRadius: BorderRadius.circular(10),
                       ),
-
-                      
                       child: const Center(
                         child: Text(
                           "SUBMIT",
@@ -316,14 +330,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                           ),
                         ),
                       ),
-
-
                     ),
-
-                  ]
-                  
-                  
-                  ),
+                  ]),
             ],
           ),
         ),
@@ -460,8 +468,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 ),
               ),
             ),
-
-
             Padding(
               padding: const EdgeInsets.all(3.0),
               child: CircleAvatar(
@@ -479,8 +485,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 ),
               ),
             ),
-
-            
             Padding(
               padding: const EdgeInsets.all(3.0),
               child: CircleAvatar(
@@ -498,8 +502,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                 ),
               ),
             ),
-
-
             Padding(
               padding: const EdgeInsets.all(3.0),
               child: CircleAvatar(
@@ -523,193 +525,185 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
 
   Widget onSubmitStat(var height, var width) {
     return Container(
-        height: height * 0.15,
-        width: width * 0.90,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 3,
-              blurRadius: 4,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
-
-
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Padding(
-                padding: EdgeInsets.all(3.0),
-
-                
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(3.0),
-                        child: CircleAvatar(
-                          radius: 15.0,
-                          backgroundColor:
-                              Color.fromARGB(255, 42, 91, 44),
-                          child: Text(
-                            "0",
-                            style: TextStyle(
-                              fontSize: 10.0,
-                              fontWeight: FontWeight.normal,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "Answered",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(3.0),
-                        child: CircleAvatar(
-                          radius: 15.0,
-                          backgroundColor: Colors.red,
-                          child: Text(
-                            "0",
-                            style: TextStyle(
-                              fontSize: 10.0,
-                              fontWeight: FontWeight.normal,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "Not Answered",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ]),
-              ),
-
-
-              const Padding(
-                padding: EdgeInsets.all(3.0),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(3.0),
-                        child: CircleAvatar(
-                          radius: 15.0,
-                          backgroundColor: Colors.grey,
-                          child: Text(
-                            "0",
-                            style: TextStyle(
-                              fontSize: 10.0,
-                              fontWeight: FontWeight.normal,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "Not Visited",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(3.0),
-                        child: CircleAvatar(
-                          radius: 15.0,
-                          backgroundColor: Color.fromARGB(255, 40, 6, 66),
-                          child: Text(
-                            "0",
-                            style: TextStyle(
-                              fontSize: 10.0,
-                              fontWeight: FontWeight.normal,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Text(
-                        "Review Later",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ]),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(3.0),
-                        child: Stack(
-                          alignment: Alignment.bottomRight,
-                          children: [
-                            const CircleAvatar(
-                              radius: 15.0,
-                              backgroundImage: NetworkImage(
-                                  'https://example.com/avatar.jpg'),
-                              child: Text(
-                                "0",
-                                style: TextStyle(
-                                  fontSize: 10.0,
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              bottom: 0,
-                              right: 0,
-                              child: Container(
-                                width: 10,
-                                height: 10,
-                                decoration: const BoxDecoration(
-                                  color: Colors.green,
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.all(3.0),
+      height: height * 0.15,
+      width: width * 0.90,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 3,
+            blurRadius: 4,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(3.0),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: CircleAvatar(
+                        radius: 15.0,
+                        backgroundColor: Color.fromARGB(255, 42, 91, 44),
                         child: Text(
-                          "Answered and Marked for review",
+                          "0",
                           style: TextStyle(
-                            fontSize: 13,
+                            fontSize: 10.0,
                             fontWeight: FontWeight.normal,
                             color: Colors.black,
                           ),
                         ),
                       ),
-                    ]),
-              ),
-            ]),
-    
+                    ),
+                    Text(
+                      "Answered",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: CircleAvatar(
+                        radius: 15.0,
+                        backgroundColor: Colors.red,
+                        child: Text(
+                          "0",
+                          style: TextStyle(
+                            fontSize: 10.0,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Not Answered",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ]),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(3.0),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: CircleAvatar(
+                        radius: 15.0,
+                        backgroundColor: Colors.grey,
+                        child: Text(
+                          "0",
+                          style: TextStyle(
+                            fontSize: 10.0,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Not Visited",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: CircleAvatar(
+                        radius: 15.0,
+                        backgroundColor: Color.fromARGB(255, 40, 6, 66),
+                        child: Text(
+                          "0",
+                          style: TextStyle(
+                            fontSize: 10.0,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Review Later",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ]),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Stack(
+                        alignment: Alignment.bottomRight,
+                        children: [
+                          const CircleAvatar(
+                            radius: 15.0,
+                            backgroundImage:
+                                NetworkImage('https://example.com/avatar.jpg'),
+                            child: Text(
+                              "0",
+                              style: TextStyle(
+                                fontSize: 10.0,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: Container(
+                              width: 10,
+                              height: 10,
+                              decoration: const BoxDecoration(
+                                color: Colors.green,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(3.0),
+                      child: Text(
+                        "Answered and Marked for review",
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ]),
+            ),
+          ]),
     );
   }
 
@@ -744,8 +738,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                         padding: EdgeInsets.all(3.0),
                         child: CircleAvatar(
                           radius: 10.0,
-                          backgroundColor:
-                              Color.fromARGB(255, 42, 91, 44),
+                          backgroundColor: Color.fromARGB(255, 42, 91, 44),
                         ),
                       ),
                       Text(
@@ -773,8 +766,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                       ),
                     ]),
               ),
-
-
               const Padding(
                 padding: EdgeInsets.all(3.0),
                 child: Row(
@@ -813,8 +804,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                       ),
                     ]),
               ),
-
-
               Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: Row(
@@ -846,8 +835,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                           ],
                         ),
                       ),
-
-
                       const Padding(
                         padding: EdgeInsets.all(3.0),
                         child: Text(
@@ -859,8 +846,6 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
                           ),
                         ),
                       ),
-
-
                     ]),
               ),
             ]),
@@ -1020,7 +1005,8 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
     );
   }
 
-  Widget Option(var height, var width, String text, String option) {
+  Widget Option(
+      var height, var width, String text, String option, Color color) {
     return SizedBox(
       height: height * 0.08,
       child: Row(
@@ -1031,7 +1017,7 @@ class _QuestionBankScreenState extends State<QuestionBankScreen> {
               padding: const EdgeInsets.all(8.0),
               child: CircleAvatar(
                 radius: 20.0,
-                backgroundColor: Colors.grey,
+                backgroundColor: color,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
