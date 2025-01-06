@@ -5,6 +5,7 @@ import '../data/model/response/category_model.dart';
 import '../provider/category_provider.dart';
 import '../utils/colors.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
+import 'package:achievex/screens/constants.dart';
 
 class CategoryScreen extends StatefulWidget {
   final CategoryModel categoryModel;
@@ -17,10 +18,9 @@ class CategoryScreen extends StatefulWidget {
 
 class _CategoryScreenState extends State<CategoryScreen>
     with TickerProviderStateMixin {
-      
   late CategoryModel _categoryModel;
   final String _type = 'all';
-  
+
   @override
   void initState() {
     super.initState();
@@ -36,14 +36,13 @@ class _CategoryScreenState extends State<CategoryScreen>
       false,
     );
 
-    print("data is loaded !"); 
+    print("data is loaded !");
   }
 
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
-
 
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
@@ -59,7 +58,6 @@ class _CategoryScreenState extends State<CategoryScreen>
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-
                       Center(
                         child: Image.asset(
                           'assets/images/welcome_image.png', // Path to your image in assets
@@ -67,7 +65,6 @@ class _CategoryScreenState extends State<CategoryScreen>
                           height: 220, // Height of the image
                         ),
                       ),
-
                       const Text(
                         "Welcome Champion",
                         style: TextStyle(
@@ -75,8 +72,6 @@ class _CategoryScreenState extends State<CategoryScreen>
                             fontSize: 25,
                             color: AppColors.whitebackgroundColor),
                       ),
-
-
                       const Text(
                         "Please select your category / Exam that you are currently preparing ",
                         style: TextStyle(
@@ -86,15 +81,10 @@ class _CategoryScreenState extends State<CategoryScreen>
                         ),
                         textAlign: TextAlign.center,
                       ),
-
-
                       const SizedBox(
                         height: 30,
                       ),
-
-                      
                       Wrap(children: [
-
                         GridView.builder(
                             shrinkWrap: true,
                             itemCount: category.categoryList!.length,
@@ -105,7 +95,7 @@ class _CategoryScreenState extends State<CategoryScreen>
                               crossAxisSpacing: 5,
                               mainAxisSpacing: 5,
                               childAspectRatio: 1,
-                              crossAxisCount: 2,  
+                              crossAxisCount: 2,
                             ),
                             itemBuilder: (context, index) {
                               Map<String, dynamic> arguments = {
@@ -118,8 +108,15 @@ class _CategoryScreenState extends State<CategoryScreen>
                               };
 
                               return InkWell(
-                                onTap: () => {
-                                 
+                                onTap: () {
+                                  if (category.categoryList![index].name ==
+                                      "Neet") {
+                                    JEE_OR_NEET = false;
+                                  } else {
+                                    JEE_OR_NEET = true;
+                                  }
+
+                                  JEE_OR_NEET ? print("jee") : print("neet");
 
                                   Navigator.of(context)
                                       .pushNamed('/select_role', arguments: {
@@ -127,7 +124,7 @@ class _CategoryScreenState extends State<CategoryScreen>
                                     'name': category.categoryList![index].name,
                                     'image':
                                         '${AppConstants.baseUrl}/storage/app/public/category/${category.categoryList![index].image}',
-                                  }),
+                                  });
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -157,11 +154,11 @@ class _CategoryScreenState extends State<CategoryScreen>
                                                       .name ??
                                                   'No name found',
                                               style: const TextStyle(
-                                                  color: AppColors
-                                                      .whitebackgroundColor,
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 20,
-                                                  ),
+                                                color: AppColors
+                                                    .whitebackgroundColor,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 20,
+                                              ),
                                             )
                                           ]),
                                     ),
@@ -202,10 +199,10 @@ class _CategoryScreenState extends State<CategoryScreen>
                       const Text(
                         "Welcome Champion",
                         style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 25,
-                            color: AppColors.whitebackgroundColor,
-                            ),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 25,
+                          color: AppColors.whitebackgroundColor,
+                        ),
                       ),
                       const Text(
                         "Please select your category / Exam that you are currently preparing ",
@@ -262,10 +259,10 @@ class _CategoryScreenState extends State<CategoryScreen>
                                       const Text(
                                         '',
                                         style: TextStyle(
-                                            color: AppColors.whitebackgroundColor,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 20,
-                                            ),
+                                          color: AppColors.whitebackgroundColor,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 20,
+                                        ),
                                       )
                                     ]),
                               ),

@@ -125,12 +125,12 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: Routes.generateRoute,
       home: const SplashScreen(),
       routes: {
-        '/verify_otp': (context) =>  VerifyOtpScreen(),
+        '/verify_otp': (context) =>  const VerifyOtpScreen(),
         '/select_role': (context) => const SelectRoleScreen(),
         '/start_color_game_screen': (context) => const StarColorGameScreen(),
         '/note_nest_screen': (context) => NotenestScreen(
               screenIndex: 2,
-            ),
+        ),
         // '/video_screen' : (context) => const VideoScreen()
       },
     );

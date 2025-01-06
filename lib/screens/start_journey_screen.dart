@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:achievex/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -21,6 +20,7 @@ class _StartJourneyScreenState extends State<StartJourneyScreen> {
     tz.initializeTimeZones();
     changeDoc();
   }
+
 
   void changeDoc() {
     Future.delayed(

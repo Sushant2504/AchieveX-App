@@ -1,6 +1,8 @@
 import 'package:achievex/provider/subscription_provider.dart';
+import 'package:achievex/screens/QuestionBank/NEET/landing_page.dart';
+import 'package:achievex/screens/constants.dart';
 import 'package:achievex/screens/notes/notenest_screen.dart';
-import 'package:achievex/screens/question_bank/landing_page.dart';
+import 'package:achievex/screens/QuestionBank/landing_page.dart';
 import 'package:achievex/screens/schedule_timetable/schedule_screen.dart';
 import 'package:achievex/screens/timetable_screen.dart';
 import 'package:achievex/screens/tips_screen.dart';
@@ -220,7 +222,7 @@ class Search extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     const Text(
-                                      'Facing Demotivation',
+                                      'Facing Demotivation', 
                                       style: TextStyle(
                                           color: AppColors.whiteColor,
                                           fontFamily: 'Prompt',
@@ -250,7 +252,9 @@ class Search extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    const Text(
+
+
+                                    Text(
                                       'Tips and Tricks',
                                       style: TextStyle(
                                           color: AppColors.whiteColor,
@@ -261,7 +265,11 @@ class Search extends StatelessWidget {
                                       'assets/images/tips.png',
                                       height: 80,
                                     ),
-                                  ]),
+
+
+                                  ],
+                                  
+                                  ),
                             ),
                           ),
                         ]),
@@ -354,44 +362,48 @@ class Search extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        InkWell(
-                          onTap: () => {
+                        // InkWell(
+                        //   onTap: () => {
                                
-                          },
-                          child: Container(
-                            width: MediaQuery.of(context).size.width / 2.3,
-                            height: MediaQuery.of(context).size.width / 2.3,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                color:
-                                    const Color.fromARGB(255, 119, 230, 226)),
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  const Text(
-                                    'Explore the mindmaps',
-                                    style: TextStyle(
-                                        color: AppColors.whiteColor,
-                                        fontFamily: 'Prompt',
-                                        fontWeight: FontWeight.w500,
-                                        ),
-                                  ),
-                                  Image.asset(
-                                    'assets/images/mindmap.png',
-                                    height: 80,
-                                  ),
-                                ]),
-                          ),
-                        ),
+                        //   },
+                        //   child: Container(
+                        //     width: MediaQuery.of(context).size.width / 2.3,
+                        //     height: MediaQuery.of(context).size.width / 2.3,
+                        //     decoration: BoxDecoration(
+                        //         borderRadius: BorderRadius.circular(12),
+                        //         color:
+                        //             const Color.fromARGB(255, 119, 230, 226)),
+                        //     child: Column(
+                        //         mainAxisAlignment: MainAxisAlignment.center,
+                        //         crossAxisAlignment: CrossAxisAlignment.center,
+                        //         children: [
+                        //           const Text(
+                        //             'Explore the mindmaps',
+                        //             style: TextStyle(
+                        //                 color: AppColors.whiteColor,
+                        //                 fontFamily: 'Prompt',
+                        //                 fontWeight: FontWeight.w500,
+                        //                 ),
+                        //           ),
+                        //           Image.asset(
+                        //             'assets/images/mindmap.png',
+                        //             height: 80,
+                        //           ),
+                        //         ]),
+                        //   ),
+                        // ),
                         InkWell(
                           onTap: () => {
                             showPremiumDialog(context).then((value) {
                               if (value) {
-                                Navigator.push(
+                                JEE_OR_NEET ? Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => LandingPage()),
+                                      builder: (context) =>  LandingPage()),
+                                ) : Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LandingNeetPage()),
                                 );
                               }
                             })

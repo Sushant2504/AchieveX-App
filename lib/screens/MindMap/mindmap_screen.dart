@@ -2,6 +2,8 @@ import 'package:achievex/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 class MindMapScreen extends StatefulWidget {
+  const MindMapScreen({super.key});
+
   @override
   _MindMapScreenState createState() => _MindMapScreenState();
 }
@@ -273,7 +275,7 @@ class _MindMapScreenState extends State<MindMapScreen> {
             ),
           ]),
 
-         child: Row(
+         child: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             

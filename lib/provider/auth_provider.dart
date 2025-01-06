@@ -1,23 +1,17 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:achievex/data/repository/authentication_repo.dart';
-import 'package:achievex/provider/home_provider.dart';
 import 'package:achievex/utils/app_constants.dart';
 import 'package:achievex/utils/routes/routes_name.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:path/path.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../data/model/response/base/api_response.dart';
-import 'package:otpless_flutter/otpless_flutter.dart';
 import '../data/model/response/user_model.dart';
 import '../helper/api_checker.dart';
 import '../utils/utils.dart';
 import 'package:achievex/provider/appdata_provider.dart';
-import 'package:achievex/screens/register_screen.dart';
 
 var otp;
 

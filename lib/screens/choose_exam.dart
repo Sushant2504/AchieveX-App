@@ -1,13 +1,8 @@
-import 'package:achievex/ui/theme.dart';
 import 'package:achievex/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
-import '../../utils/app_constants.dart';
 
 class ChooseExam extends StatelessWidget {
   const ChooseExam({super.key});
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +82,8 @@ class ChooseExam extends StatelessWidget {
                               fontFamily: 'Promt-Bold',
                               fontWeight: FontWeight.w600,
                               color: Colors.black,
-                              fontSize: 13),
+                              fontSize: 13,
+                          ),
                         ),
                       ),
                       Row(

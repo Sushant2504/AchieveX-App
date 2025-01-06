@@ -16,7 +16,7 @@ class RoundedIconButton extends StatelessWidget {
         color: const Color(0x20000000),
         borderRadius: const BorderRadius.all(Radius.circular(15)),
         onPressed: onPressed,
-        child: Icon(icon, color: Color(0xffffffff)),
+        child: Icon(icon, color: const Color(0xffffffff)),
       ),
     );
   }

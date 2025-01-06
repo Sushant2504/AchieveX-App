@@ -3,13 +3,10 @@ import 'package:achievex/provider/appdata_provider.dart';
 import 'package:achievex/utils/colors.dart';
 import 'package:achievex/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:otpless_flutter/otpless_flutter.dart';
 import '../provider/auth_provider.dart';
-import '../utils/utils.dart';
 import '../utils/app_constants.dart';
-import 'package:achievex/screens/verify_otp.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

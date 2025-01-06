@@ -1,14 +1,7 @@
-import 'dart:convert';
 import 'dart:io';
-import 'package:achievex/screens/category_screen.dart';
-import 'package:achievex/screens/verify_otp.dart';
 import 'package:achievex/utils/colors.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:otpless_flutter/otpless_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:otpless_flutter/otpless_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:achievex/utils/app_constants.dart';
 import '../provider/auth_provider.dart';
@@ -88,21 +81,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         const Padding(
                           padding: EdgeInsets.only(right: 12.0, top: 12),
-                          child: Text("Create An\nAccount",
-                              style: TextStyle(
-                                  fontSize: 28,
-                                  fontFamily: 'Poppins',
-                                  color: AppColors.blackColor,
-                                  fontWeight: FontWeight.w700)),
+                          child: Text(
+                            "Create An\nAccount",
+                            style: TextStyle(
+                              fontSize: 28,
+                              fontFamily: 'Poppins',
+                              color: AppColors.blackColor,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
                         ),
                         const Padding(
                           padding: EdgeInsets.only(left: 0.0),
-                          child: Text("On \"Achievex X\"",
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'Poppins',
-                                  color: AppColors.textNewColor,
-                                  fontWeight: FontWeight.w700)),
+                          child: Text(
+                            "On \"Achievex X\"",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontFamily: 'Poppins',
+                              color: AppColors.textNewColor,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           height: 34,
@@ -232,10 +231,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             onTap: () {
                               if (mobileNumberController.text.isNotEmpty &&
                                   nameController.text.isNotEmpty) {
-                                  sendOtpless(mobileNumberController.text
+                                sendOtpless(mobileNumberController.text
                                     .toString()
                                     .trim());
-                                
                               } else {
                                 Utils.showToast('All fields are required');
                                 Utils.showFlushbar(
@@ -302,52 +300,57 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ],
                           ),
-                          child: _isLoading ? const Center(child: CircularProgressIndicator()) : InkWell(
-                            onTap: () async {
-                              setState(() {
-                                    _isLoading = true;
-                                  });
+                          child: _isLoading
+                              ? const Center(child: CircularProgressIndicator())
+                              : InkWell(
+                                  onTap: () async {
+                                    setState(() {
+                                      _isLoading = true;
+                                    });
 
-                                  await loginwithGoogle();
+                                    await loginwithGoogle();
 
-                                  setState(() {
-                                    _isLoading = false;
-                                  });
+                                    setState(() {
+                                      _isLoading = false;
+                                    });
 
-                                  storeNameAndPhoneNumber(
-                                      nameController.text.toString().trim(),
-                                      mobileNumberController.text
-                                          .toString()
-                                          .trim());
+                                    storeNameAndPhoneNumber(
+                                        nameController.text.toString().trim(),
+                                        mobileNumberController.text
+                                            .toString()
+                                            .trim());
 
-                                  Navigator.pushNamedAndRemoveUntil(
-                                      context,
-                                      RoutesName.categoryScreen,
-                                      (route) => false);
-                            },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                IconButton(
-                                  onPressed: () {
-                                    // Add your onPressed functionality here
+                                    Navigator.pushNamedAndRemoveUntil(
+                                        context,
+                                        RoutesName.categoryScreen,
+                                        (route) => false);
                                   },
-                                  icon: Image.asset(
-                                    'assets/icons/g_login.png', // Replace with your image file path
-                                    width: 24, // Set the width of the image
-                                    height: 24, // Set the height of the image
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      IconButton(
+                                        onPressed: () {
+                                          // Add your onPressed functionality here
+                                        },
+                                        icon: Image.asset(
+                                          'assets/icons/g_login.png', // Replace with your image file path
+                                          width:
+                                              24, // Set the width of the image
+                                          height:
+                                              24, // Set the height of the image
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 3,
+                                      ),
+                                      const Text(
+                                        'Continue With Google',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w700),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                const SizedBox(
-                                  width: 3,
-                                ),
-                                const Text(
-                                  'Continue With Google',
-                                  style: TextStyle(fontWeight: FontWeight.w700),
-                                ),
-                              ],
-                            ),
-                          ),
                         ),
                         const SizedBox(
                           height: 10,
@@ -365,11 +368,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void sendOtpless(String mobileNumber) {
-      Map<String, dynamic> arg = {};
-      arg["phone"] = mobileNumber;
-      arg["countryCode"] = "+91";
-      _otplessFlutterPlugin.startHeadless(onHeadlessResult, arg);
-  
+    Map<String, dynamic> arg = {};
+    arg["phone"] = mobileNumber;
+    arg["countryCode"] = "+91";
+    _otplessFlutterPlugin.startHeadless(onHeadlessResult, arg);
   }
 
   void onHeadlessResult(dynamic result) async {
@@ -390,8 +392,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           break;
         case 'VERIFY':
           {
-
-             isLoggedIn();
+            isLoggedIn();
 
             Navigator.pushNamedAndRemoveUntil(
                 context, RoutesName.categoryScreen, (route) => false);
@@ -403,7 +404,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               otp = result['response']['otp'] as String;
 
               Navigator.pushNamedAndRemoveUntil(
-                context, RoutesName.categoryScreen, (route) => false);
+                  context, RoutesName.categoryScreen, (route) => false);
             }
           }
           break;
@@ -454,5 +455,4 @@ class _RegisterScreenState extends State<RegisterScreen> {
     Map<String, dynamic> arg = {'channelType': channel};
     _otplessFlutterPlugin.startHeadless(onHeadlessResult, arg);
   }
-
 }

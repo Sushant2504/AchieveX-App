@@ -3,20 +3,13 @@ import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:otpless_flutter/otpless_flutter.dart';
-import 'package:otpless_flutter/otpless_flutter_method_channel.dart';
 import 'package:pinput/pinput.dart';
-import 'package:provider/provider.dart';
 import 'package:achievex/provider/auth_provider.dart';
-import 'package:achievex/provider/auth_provider.dart';
-import 'package:achievex/screens/category_screen.dart';
-import 'package:achievex/screens/search.dart';
 import 'package:achievex/ui/theme.dart';
 import 'package:achievex/utils/app_constants.dart';
 import 'package:achievex/utils/routes/routes_name.dart';
 import 'package:achievex/provider/appdata_provider.dart';
-import '../utils/colors.dart';
 
 class VerifyOtpScreen extends StatefulWidget {
   const VerifyOtpScreen({super.key});

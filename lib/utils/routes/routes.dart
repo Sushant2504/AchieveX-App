@@ -1,20 +1,40 @@
 import 'package:achievex/data/model/response/category_model.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20ADVANCED/11th_jee_advanced_chem.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20ADVANCED/11th_jee_advanced_maths.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20ADVANCED/11th_jee_advanced_phy.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20ADVANCED/12th_jee_advanced_chem.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20ADVANCED/12th_jee_advanced_maths.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20ADVANCED/12th_jee_advanced_phy.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20MAIN/11th_jee_main_chem.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20MAIN/11th_jee_main_maths.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20MAIN/11th_jee_main_phy.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20MAIN/12th_jee_main_chem.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20MAIN/12th_jee_main_maths.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20MAIN/12th_jee_main_phy.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/NEET/11th_neet_bio.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/NEET/11th_neet_chem.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/NEET/11th_neet_phy.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/NEET/12th_neet_bio.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/NEET/12th_neet_chem.dart';
+import 'package:achievex/screens/QuestionBank/Chapter%20Screens/NEET/12th_neet_phy.dart';
+import 'package:achievex/screens/QuestionBank/Exam/Chapterwise/all_questions.dart';
+import 'package:achievex/screens/QuestionBank/Exam/Chapterwise/chapterwise_exam.dart';
+import 'package:achievex/screens/QuestionBank/Exam/Chapterwise/explanation_screen.dart';
+import 'package:achievex/screens/QuestionBank/NEET/full_test_exam.dart';
+import 'package:achievex/screens/QuestionBank/NEET/full_test_names.dart';
+import 'package:achievex/screens/QuestionBank/NEET/full_test_neet_result.dart';
+import 'package:achievex/screens/QuestionBank/NEET/landing_page.dart';
+import 'package:achievex/screens/QuestionBank/NEET/selectsubject_screen.dart';
+import 'package:achievex/screens/QuestionBank/chapter_screen.dart';
+import 'package:achievex/screens/QuestionBank/chooseexam_screen.dart';
+import 'package:achievex/screens/QuestionBank/question_set_screen.dart';
+import 'package:achievex/screens/QuestionBank/selectsubject_screen.dart';
 import 'package:achievex/screens/brain_games/brain_game_screen.dart';
 import 'package:achievex/screens/brain_games/neuropractice/neuro_home_screen.dart';
 import 'package:achievex/screens/category_screen.dart';
 import 'package:achievex/screens/chess_game/main_menu_view.dart';
-import 'package:achievex/screens/choose_exam.dart';
-import 'package:achievex/screens/class%2011/class_11_bio.dart';
-import 'package:achievex/screens/class%2011/class_11_chem.dart';
-import 'package:achievex/screens/class%2011/class_11_maths.dart';
-import 'package:achievex/screens/class%2011/class_11_phy.dart';
-import 'package:achievex/screens/class%2012/class_12_bio.dart';
-import 'package:achievex/screens/class%2012/class_12_chem.dart';
-import 'package:achievex/screens/class%2012/class_12_maths.dart';
-import 'package:achievex/screens/class%2012/class_12_phy.dart';
 import 'package:achievex/screens/classes/class_2.dart';
 import 'package:achievex/screens/color_game/color_game_result_screen.dart';
-import 'package:achievex/screens/color_game/instruction_screen.dart';
 import 'package:achievex/screens/color_game/select_level_screen.dart';
 import 'package:achievex/screens/courses_screen.dart';
 import 'package:achievex/screens/home.dart';
@@ -22,13 +42,9 @@ import 'package:achievex/screens/classes/class_1.dart';
 import 'package:achievex/screens/navigation.dart';
 import 'package:achievex/screens/notes/notenest_screen.dart';
 import 'package:achievex/screens/privacy_screen.dart';
-import 'package:achievex/screens/question_bank/QuestionWise.dart';
-import 'package:achievex/screens/question_bank/instruction_screen.dart';
-import 'package:achievex/screens/question_bank/landing_page.dart';
-import 'package:achievex/screens/question_bank/question_bank_screen.dart';
+import 'package:achievex/screens/QuestionBank/landing_page.dart';
 import 'package:achievex/screens/refer_earn_screen.dart';
 import 'package:achievex/screens/register_screen.dart';
-import 'package:achievex/screens/result_screen.dart';
 import 'package:achievex/screens/schedule_timetable/schedule_screen.dart';
 import 'package:achievex/screens/schulte_game/schulte_game_screen.dart';
 import 'package:achievex/screens/schulte_game/schulte_game_screen_normal.dart';
@@ -48,8 +64,9 @@ import 'package:flutter/material.dart';
 import 'package:achievex/utils/routes/routes_name.dart';
 import '../../screens/login_screen.dart';
 import '../../screens/notification_screen.dart';
-import 'package:achievex/screens/question_bank/analysis_result.dart';
-
+import 'package:achievex/screens/QuestionBank/chooseexam_screen.dart';
+import 'package:achievex/screens/QuestionBank/Exam/Chapterwise/result_screen.dart';
+import 'package:achievex/screens/QuestionBank/Exam/Chapterwise/instruction_page.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -66,30 +83,23 @@ class Routes {
 
       case RoutesName.login:
         return MaterialPageRoute(
-            builder: (BuildContext context) => LoginScreen());
-            
+            builder: (BuildContext context) => const LoginScreen());
+
       case RoutesName.setting_screen:
         return MaterialPageRoute(
             builder: (BuildContext context) => const SettingsScreen());
 
       case RoutesName.register:
         return MaterialPageRoute(
-            builder: (BuildContext context) => RegisterScreen());
+            builder: (BuildContext context) => const RegisterScreen());
 
       case RoutesName.verifyOtp:
         return MaterialPageRoute(
-            builder: (BuildContext context) => VerifyOtpScreen());
-
-      case RoutesName.AnalysisScreen:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => AnalysisResult());
+            builder: (BuildContext context) => const VerifyOtpScreen());
 
       case RoutesName.neuroPractice:
         return MaterialPageRoute(
             builder: (BuildContext context) => const NeuroHomeScreen());
-
-      case RoutesName.QuestionwiseScreen:
-        return MaterialPageRoute(builder: (BuildContext context) =>  Questionwise());   
 
       case RoutesName.categoryScreen:
         return MaterialPageRoute(
@@ -98,11 +108,11 @@ class Routes {
 
       case RoutesName.class1:
         return MaterialPageRoute(
-            builder: (BuildContext context) =>  Class_11());
+            builder: (BuildContext context) => const Class_11());
 
       case RoutesName.class2:
         return MaterialPageRoute(
-            builder: (BuildContext context) =>  Class_12());
+            builder: (BuildContext context) => const Class_12());
 
       case RoutesName.start_journey:
         return MaterialPageRoute(
@@ -120,26 +130,37 @@ class Routes {
         return MaterialPageRoute(
             builder: (BuildContext context) => const CourseScreen());
 
-      // case RoutesName.pcm:
-      //   return MaterialPageRoute(
-      //       builder: (BuildContext context) => const PCM());
-
-      // case RoutesName.pcb:
-      //   return MaterialPageRoute(
-      //       builder: (BuildContext context) => const PCB());
-
       case RoutesName.choose_exam:
-        return MaterialPageRoute(builder: (BuildContext context) => ChooseExam());            
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (BuildContext context) => ChooseexamScreen(
+            Class: args['Class'],
+          ),
+        );
+
+      case RoutesName.subjectname:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+            builder: (context) => SelectsubjectScreen(
+                  Exam: args['Exam'],
+                  Class: args['class'],
+                ));
+
+      case RoutesName.chapterscreen:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+            builder: (context) => ChapterScreen(
+                  parameters: args['parameters'],
+                  index: args['index'],
+                ));
 
       case RoutesName.landingPage:
-        return MaterialPageRoute(builder: (BuildContext context) => LandingPage()); 
+        return MaterialPageRoute(
+            builder: (BuildContext context) => LandingPage());
 
       case RoutesName.search:
         return MaterialPageRoute(
             builder: (BuildContext context) => const Search());
-
-      case RoutesName.QuestionereScreen:
-        return MaterialPageRoute(builder: (BuildContext context) => QuestionBankScreen());
 
       case RoutesName.writeYourPost:
         return MaterialPageRoute(
@@ -173,24 +194,17 @@ class Routes {
 
       case RoutesName.schulteTableScreenNormal:
         return MaterialPageRoute(
-            builder: (BuildContext context) => const SchulteTableGameNormalScreen());
+            builder: (BuildContext context) =>
+                const SchulteTableGameNormalScreen());
 
       case RoutesName.schulteTableScreenOneMinChallenge:
         return MaterialPageRoute(
             builder: (BuildContext context) =>
                 const SchulteTableGameOneMinChallengeScreen());
 
-      case RoutesName.Instruction:
+      case RoutesName.colorGameScreen:
         return MaterialPageRoute(
-          builder: (BuildContext context) => 
-               InstructionPage());     
-
-      case RoutesName.resultScreen:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => ResultScreen(
-                  resultTime: '',
-                  count: "0",
-                ));
+            builder: (BuildContext context) => const ChooseColorLevelScreen());
 
       case RoutesName.colorGameScreen:
         return MaterialPageRoute(
@@ -220,44 +234,274 @@ class Routes {
         return MaterialPageRoute(
             builder: (BuildContext context) => const ScheduleScreen());
 
-      case RoutesName.class11phy:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => const Class11PhyScreen());  
-
-      case RoutesName.class11chem:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => Class11Chemistry()); 
-
-      case RoutesName.class11math:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => Class11Maths());
-
-      case RoutesName.class11bio:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => Class11Bio());     
-
-      case RoutesName.Class12Phy:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => Class12Phy());   
-
-      case RoutesName.Class12Chem:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => Class12Chem());  
-
-      case RoutesName.Class12Math:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => Class12Maths());
-
-      case RoutesName.Class12Bio:
-        return MaterialPageRoute(
-            builder: (BuildContext context) => Class12Bio());            
-
-
       case RoutesName.noteNestScreen:
         return MaterialPageRoute(
             builder: (BuildContext context) => NotenestScreen(
                   screenIndex: 2,
                 ));
+
+      //fultesttopics...
+      case RoutesName.fulltestneetchaptersScreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => FullTestNames(),
+        );
+
+      //fulltest
+      case RoutesName.fulltestneet:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => FullNeetExam(),
+        );
+
+      case RoutesName.fulltestneetresult:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => fulltestneetresult(),
+        );
+
+      case RoutesName.fulltestjeemain:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => FullNeetExam(),
+        );
+
+      case RoutesName.fulltestjeeadvanced:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => FullNeetExam(),
+        );
+
+      //fulltestresult....
+
+      case RoutesName.fulltestneetresult:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => FullNeetExam(),
+        );
+
+      case RoutesName.fulltestjeemainreslt:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => FullNeetExam(),
+        );
+
+      case RoutesName.fulltestjeeadvancedresult:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => FullNeetExam(),
+        );
+
+      //////
+
+      // jee-main
+      case RoutesName.eleventh_jeemain_maths:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeemainoneScreen(),
+        );
+
+      case RoutesName.eleventh_jeemain_chem:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeemaintwoScreen(),
+        );
+
+      case RoutesName.eleventh_jeemain_phy:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeemainthreeScreen(),
+        );
+
+      case RoutesName.twelth_jeemain_chem:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeemainfourScreen(),
+        );
+
+      case RoutesName.twelth_jeemain_maths:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeemainfiveScreen(),
+        );
+
+      case RoutesName.twelth_jeemain_phy:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeemainsixScreen(),
+        );
+
+      case RoutesName.eleventh_jeemain_phy:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeemaintwoScreen(),
+        );
+
+      //jee-advanced
+
+      case RoutesName.eleventh_jeeadvanced_chem:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedoneScreen(),
+        );
+
+      case RoutesName.eleventh_jeeadvanced_maths:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedtwoScreen(),
+        );
+
+      case RoutesName.eleventh_jeeadvanced_phy:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedthreeScreen(),
+        );
+
+      case RoutesName.twelth_jeeadvanced_chem:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedfourScreen(),
+        );
+
+      case RoutesName.twelth_jeeadvanced_maths:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedfiveScreen(),
+        );
+
+      case RoutesName.twelth_jeeadvanced_phy:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedsixScreen(),
+        );
+
+      // neet
+
+      case RoutesName.eleventh_jeeadvanced_chem:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedoneScreen(),
+        );
+
+      case RoutesName.eleventh_jeeadvanced_maths:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedtwoScreen(),
+        );
+
+      case RoutesName.eleventh_jeeadvanced_phy:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedthreeScreen(),
+        );
+
+      case RoutesName.twelth_jeeadvanced_chem:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedfourScreen(),
+        );
+
+      case RoutesName.twelth_jeeadvanced_maths:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedfiveScreen(),
+        );
+
+      case RoutesName.twelth_jeeadvanced_phy:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectjeeadvancedsixScreen(),
+        );
+
+      case RoutesName.eleventh_neet_bio:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectneetoneScreen(),
+        );
+
+      case RoutesName.eleventh_neet_chem:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectneettwoScreen(),
+        );
+
+      case RoutesName.eleventh_neet_phy:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectneetthreeScreen(),
+        );
+
+      case RoutesName.twelth_neet_bio:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectneetfourScreen(),
+        );
+
+      case RoutesName.twelth_neet_chem:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectneetfiveScreen(),
+        );
+
+      case RoutesName.twelth_neet_phy:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SubjectneetsixScreen(),
+        );
+
+      //landing pages
+      //
+      case RoutesName.neetlandingPage:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => LandingNeetPage(),
+        );
+
+      //questionsetscreen
+      case RoutesName.selectneetsubject:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SelectsubjectNeetScreen(
+            Exam: args['Exam'],
+            Class: args['Class'],
+          ),
+        );
+      //
+
+      case RoutesName.questionsetscreen:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (BuildContext context) => QuestionSetScreen(
+            chapterset1: args['chapterset1'],
+            chapterset2: args['chapterset2'],
+            chapterset3: args['chapterset3'],
+            subject: args['subject'],
+          ),
+        );
+
+      //examsection
+      case RoutesName.chapterwiseexam:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (BuildContext context) => ChapterwiseExam(
+            Set: args['Set'],
+            chapterset1: args['chapterset1'],
+            chapterset2: args['chapterset2'],
+            chapterset3: args['chapterset3'],
+            subject: args['subject'],
+          ),
+      );
+
+      //resultsection..
+      //
+
+      case RoutesName.resultscreen:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (BuildContext context) => ResultScreen(
+            Set: args['Set'],
+            chapterset1: args['chapterset1'],
+            chapterset2: args['chapterset2'],
+            chapterset3: args['chapterset3'],
+            Questioncolor: args['Questioncolor'],
+            marks: args['marks'],
+            notanswered: args['notanswered'],
+            correctanswered: args['correctanswered'],
+            incorrectanswered: args['incorrectanswered'],
+            timetaken: args['timetaken'],
+            subject: args['subject'],
+          ),
+      );
+
+      case RoutesName.instructionscreen:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => InstructionPage(),
+        );
+
+      case RoutesName.allquestions:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (BuildContext context) => AllQuestions(
+            paper: args['paper'],
+          ),
+        );
+
+      //explanation
+
+      case RoutesName.explanationscreen:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (BuildContext context) => ExaplanationScreen(
+            paper: args['paper'],
+            index: args['index'],
+          ),
+        );
 
       default:
         return MaterialPageRoute(builder: (_) {
