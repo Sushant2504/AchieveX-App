@@ -1,7 +1,9 @@
+import 'package:achievex/screens/QuestionBank/Exam/Full-Test/JEE-ADVANCED/fulltest_exam.dart';
 import 'package:achievex/screens/QuestionBank/Exam/Full-Test/year_screen.dart';
 import 'package:achievex/screens/QuestionBank/instruction.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:achievex/screens/QuestionBank/Database/JEE-ADVANCED/full-test/paper_data.dart';
 
 late String subject = "subject";
 late String subsubject = "Topic Wise PYQs";
@@ -298,7 +300,7 @@ class _SelectsubjectScreenState extends State<SelectsubjectScreen> {
       case 4:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => YearNamesScreen(exam: _exam)),
+          MaterialPageRoute(builder: (context) => _exam == "jeeadvanced" ? FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,) : YearNamesScreen(exam: _exam)),
         );
         print("jee main full-test");
         break;
@@ -326,7 +328,7 @@ class _SelectsubjectScreenState extends State<SelectsubjectScreen> {
       case 8:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => YearNamesScreen(exam: _exam)),
+          MaterialPageRoute(builder: (context) => _exam == "jeeadvanced" ? FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,) : YearNamesScreen(exam: _exam)),
         );
         print("for the full test");
         break;

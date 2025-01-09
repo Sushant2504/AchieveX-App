@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:achievex/screens/QuestionBank/Exam/Full-Test/JEE-MAIN/paper_data.dart';
+import 'package:achievex/screens/QuestionBank/Exam/Full-Test/JEE-MAIN/fulltest_exam.dart';
 
 class ShiftScreen extends StatefulWidget {
   final List<String> year;
@@ -41,7 +42,13 @@ class _ShiftScreenState extends State<ShiftScreen> {
     return Padding(
       padding: EdgeInsets.only(left: 7.0, right: 7.0, top: 10.0, bottom: 10.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+            Navigator.push(
+               context, 
+               MaterialPageRoute(builder: (context) => FullJeeMainExam(paper: widget.paper,)),
+            );
+
+        },
         child: Container(
           height: height * 0.09,
           width: width * 0.28,
@@ -53,10 +60,10 @@ class _ShiftScreenState extends State<ShiftScreen> {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5), // Shadow color
-                spreadRadius: 5, // How much the shadow spreads
-                blurRadius: 5, // How blurry the shadow is
-                offset: Offset(0, 3), // Changes position of shadow
+                color: Colors.grey.withOpacity(0.5), 
+                spreadRadius: 5, 
+                blurRadius: 5, 
+                offset: Offset(0, 3), 
               ),
             ],
           ),
@@ -73,7 +80,8 @@ class _ShiftScreenState extends State<ShiftScreen> {
                       topLeft: Radius.circular(10.0),
                       bottomLeft: Radius.circular(10.0),
                     ),
-                  )),
+                  ),
+                  ),
               const SizedBox(
                 width: 15.0,
               ),

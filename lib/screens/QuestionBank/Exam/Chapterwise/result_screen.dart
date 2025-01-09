@@ -393,7 +393,8 @@ class _ResultScreenState extends State<ResultScreen> {
       Color secondfront,
       Color secondback,
       Color thirdfront,
-      Color thirdback) {
+      Color thirdback,
+      ) {
     return Stack(
       alignment: Alignment.center,
       children: [

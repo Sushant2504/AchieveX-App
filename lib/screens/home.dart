@@ -714,8 +714,8 @@ class _HomeScreenState extends State<Page1> with TickerProviderStateMixin {
                                           height * 0.40,
                                       cardBuilder: (context, index) => Card(
                                         child: Container(
-                                      height: 420,
-                                      width: 330,
+                                      height: height * 0.50,
+                                      width: width * 92,
                                       decoration: BoxDecoration(
                                         color: const Color.fromARGB(
                                             255, 92, 159, 245),
@@ -724,8 +724,8 @@ class _HomeScreenState extends State<Page1> with TickerProviderStateMixin {
                                       ),
                                       child: Center(
                                         child: Container(
-                                          height: 400,
-                                          width: 310,
+                                          height: height * 0.45,
+                                          width: width * 0.80,
                                           decoration: BoxDecoration(
                                             color: HexColor('#5C76FF'),
                                             borderRadius:
@@ -775,7 +775,7 @@ class _HomeScreenState extends State<Page1> with TickerProviderStateMixin {
                                                 ),
                                               ),
                                               const SizedBox(
-                                                height: 35.0,
+                                                height: 40.0,
                                               ),
                                               Row(
                                                 mainAxisAlignment:
