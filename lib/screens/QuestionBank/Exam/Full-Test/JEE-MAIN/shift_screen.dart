@@ -1,0 +1,100 @@
+import 'package:achievex/screens/QuestionBank/Exam/Full-Test/JEE-MAIN/fulltest_exam.dart';
+import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
+
+class ShiftScreen extends StatefulWidget {
+  final List<String> year;
+  final List<List<dynamic>> paper;
+
+  const ShiftScreen({super.key, 
+    required this.year, 
+    required this.paper,
+  });
+
+  @override
+  _ShiftScreenState createState() => _ShiftScreenState();
+}
+
+class _ShiftScreenState extends State<ShiftScreen> {
+  @override
+  Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: widget.year.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: ShiftCard(height, width, widget.year[index],
+                HexColor('#5C76FF'), widget.paper),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget ShiftCard(var height, var width, String text, Color color,
+      List<List<dynamic>> paper) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 7.0, right: 7.0, top: 10.0, bottom: 10.0),
+      child: InkWell(
+        onTap: () {
+            Navigator.push(
+               context, 
+               MaterialPageRoute(builder: (context) => FullJeeMainExam(Set: widget.paper,)),
+            );
+
+        },
+        child: Container(
+          height: height * 0.09,
+          width: width * 0.28,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.only(
+              topRight: Radius.circular(10.0),
+              bottomRight: Radius.circular(10.0),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5), 
+                spreadRadius: 5, 
+                blurRadius: 5, 
+                offset: const Offset(0, 3), 
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                  height: height * 0.09,
+                  width: width * 0.015,
+                  decoration: BoxDecoration(
+                    color: color,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(10.0),
+                      bottomLeft: Radius.circular(10.0),
+                    ),
+                  ),
+                  ),
+              const SizedBox(
+                width: 15.0,
+              ),
+              Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
