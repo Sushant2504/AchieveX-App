@@ -57,7 +57,6 @@ List<List<int>> _QuestionCount = [
 
 late double percentage;
 late double percentile;
-
 class ResultScreen extends StatefulWidget {
   final List<List<dynamic>> Set;
   final List<List<dynamic>> chapterset1;
@@ -97,7 +96,7 @@ class _ResultScreenState extends State<ResultScreen> {
     var width = MediaQuery.of(context).size.width;
     percentage = Percentage(widget.correctanswered, 30);
     percentile = calculatePercentile(
-        widget.marks.toDouble(), PreviousYearsData.chapterwise);
+        widget.marks.toDouble(), PreviousYearsData.Percentiles);
 
     return Scaffold(
       appBar: AppBar(
@@ -205,6 +204,8 @@ class _ResultScreenState extends State<ResultScreen> {
     );
   }
 
+
+
   //satuscard....
   Widget StatusCard(var height, var width, Color bgcolor, Color sidecolor,
       String text, int count) {
@@ -274,6 +275,8 @@ class _ResultScreenState extends State<ResultScreen> {
       ),
     );
   }
+
+
 
   //resultcard.....
   Widget ResultCard(var height, var width) {

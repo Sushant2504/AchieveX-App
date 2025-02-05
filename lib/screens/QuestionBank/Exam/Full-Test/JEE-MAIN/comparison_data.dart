@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PreviousYearsData {
-  List<Map<String, double>> jeemains2024_easy = [
+
+
+  static List<Map<String, double>> jeemains2024_easy = [
      {'marks': 300, 'percentile': 99.9},
     {'marks': 290, 'percentile': 99.8},
     {'marks': 271, 'percentile': 99.7}, 
@@ -32,6 +34,9 @@ class PreviousYearsData {
     {'marks': 5, 'percentile': 5},
     {'marks': 0, 'percentile': 0}, 
   ];
+
+
+  static List<double> Percentiles = [99.8, 99.6, 99.4, 99.2, 99, 98.8, 98, 97, 96.5, 95, 94, 93, 92, 91, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5, 0];
 
 
    List<Map<String, double>> jeemains2024_medium = [

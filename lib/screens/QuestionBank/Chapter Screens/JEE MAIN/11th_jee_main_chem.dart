@@ -11,8 +11,8 @@ List<List<String>> class_11_jee_main = [
 
 List<List<String>> class_12_jee_main = [
   physics12th,
-  chemistry11th,
-  maths11th,
+  chemistry12th,
+  maths12th,
 ];
 
 class SubjectjeemaintwoScreen extends StatefulWidget {
@@ -82,12 +82,9 @@ class _SubjectjeemaintwoScreenState extends State<SubjectjeemaintwoScreen> {
                 ),
               ),
 
-
-
               const SizedBox(
                 height: 10.0,
               ),
-
                 
               _ChapterCard(1, class_11_jee_main[1][0], chapter_9_11_set_1,
                   chapter_9_11_set_1, chapter_1_11_set_1),
@@ -146,6 +143,7 @@ class _SubjectjeemaintwoScreenState extends State<SubjectjeemaintwoScreen> {
             'chapterset1': c1,
             'chapterset2': c2,
             'chapterset3': c3,
+            'subject': "Chemistry",
           });
         },
         child: Container(

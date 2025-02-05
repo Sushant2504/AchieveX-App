@@ -7,6 +7,7 @@ import '../utils/colors.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 import 'package:achievex/screens/constants.dart';
 
+
 class CategoryScreen extends StatefulWidget {
   final CategoryModel categoryModel;
   // const CategoryScreen({super.key,required this.categoryModel});
@@ -174,6 +175,8 @@ class _CategoryScreenState extends State<CategoryScreen>
       }),
     );
   }
+
+  
 
   SingleChildScrollView categoryShimmer(
       BuildContext context, double height, CategoryProvider category) {

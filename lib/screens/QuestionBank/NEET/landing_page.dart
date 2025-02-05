@@ -206,7 +206,7 @@ class _LandingNeetPageState extends State<LandingNeetPage> {
       height: 150,
       width: 150,
       decoration: BoxDecoration(
-        color: HexColor("#416FDF"),
+        color: color,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(

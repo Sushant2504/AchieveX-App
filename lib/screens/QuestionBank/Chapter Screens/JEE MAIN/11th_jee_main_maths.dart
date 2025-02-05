@@ -11,8 +11,8 @@ List<List<String>> class_11_jee_main = [
 
 List<List<String>> class_12_jee_main = [
   physics12th,
-  chemistry11th,
-  maths11th,
+  chemistry12th,
+  maths12th,
 ];
 
 class SubjectjeemainoneScreen extends StatefulWidget {

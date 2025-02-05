@@ -1,5 +1,6 @@
 import 'package:achievex/screens/QuestionBank/NEET/full_test_exam.dart';
 import 'package:flutter/material.dart';
+import 'package:achievex/screens/QuestionBank/Database/NEET/full_test.dart';
 
 class FullTestNames extends StatefulWidget {
   @override
@@ -81,7 +82,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2024),
@@ -90,7 +91,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2023),
@@ -106,7 +107,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2022),
@@ -115,7 +116,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2021),
@@ -131,7 +132,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2020),
@@ -140,7 +141,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2019),
@@ -156,7 +157,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2018),
@@ -165,7 +166,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2017),
@@ -181,7 +182,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2016),
@@ -190,7 +191,7 @@ class _FullTestNamesState extends State<FullTestNames> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => FullNeetExam()),
+                            MaterialPageRoute(builder: (context) => FullNeetExam(Set: neet_2024)),
                           );
                       },
                       child:  YearCard(height, width, 2015),

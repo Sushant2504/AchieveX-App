@@ -1,3 +1,5 @@
+import 'package:achievex/screens/QuestionBank/Exam/Chapterwise/logic.dart';
+import 'package:achievex/screens/QuestionBank/Exam/Full-Test/JEE-MAIN/comparison_data.dart';
 import 'package:achievex/screens/QuestionBank/Exam/Full-Test/JEE-MAIN/fulltest_exam.dart';
 import 'package:achievex/screens/QuestionBank/Exam/Full-Test/year_screen.dart';
 import 'package:flutter/material.dart';
@@ -58,6 +60,31 @@ List<List<String>> QuestionCount = [
   ["86", "87", "88", "89", "90"],
 ];
 
+
+
+List<List<int>> _QuestionCount = [
+  [1, 2, 3, 4, 5],
+  [6, 7, 8, 9, 10],
+  [11, 12, 13, 14, 15],
+  [16, 17, 18, 19, 20],
+  [21, 22, 23, 24, 25],
+  [26, 27, 28, 29, 30],
+  [31, 32, 33, 34, 35],
+  [36, 37, 38, 39, 40],
+  [41, 42, 43, 44, 45],
+  [46, 47, 48, 49, 50],
+  [51, 52, 53, 54, 55],
+  [56, 57, 58, 59, 60],
+  [61, 62, 63, 64, 65],
+  [66, 67, 68, 69, 70],
+  [71, 72, 73, 74, 75],
+  [76, 77, 78, 79, 80],
+  [81, 82, 83, 84, 85],
+  [86, 87, 88, 89, 90],
+];
+
+
+
 List<List<bool>> _visited = [
   [false, false, false, false, false],
   [false, false, false, false, false],
@@ -78,23 +105,49 @@ List<List<bool>> _visited = [
   [false, false, false, false, false],
 ];
 
-class Fulltestjeemainresult extends StatefulWidget {
-  // final String exam;
-  // final List<List<Color>> Questioncolor;
-  final List<List<dynamic>> paper;
 
-  Fulltestjeemainresult({required this.paper});
+
+late double percentile;
+late double percentage;
+
+class Fulltestjeemainresult extends StatefulWidget {
+  final List<List<dynamic>> paper;
+  final List<List<Color>> Questioncolor;
+  final int marks;
+  final int notanswered;
+  final int correctanswered;
+  final int incorrectanswered;
+  final String timetaken;
+  final String subject;
+
+  Fulltestjeemainresult({
+    required this.paper,
+    required this.Questioncolor,
+    required this.marks,
+    required this.notanswered,
+    required this.correctanswered,
+    required this.incorrectanswered,
+    required this.timetaken,
+    required this.subject,
+  });
 
   @override
   _FulltestjeemainresultState createState() => _FulltestjeemainresultState();
 }
+
+
 
 class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    RangeValues _currentRangeValues = const RangeValues(900000, 1100000);
+    percentage = Percentage(widget.correctanswered, 90);
+    percentile = calculatePercentile(widget.marks.toDouble(), PreviousYearsData.Percentiles);
+    percentage = percentage.abs();
+    percentile = percentile.abs();
+    Map<String, int> _rankrange = getRankRange(widget.marks.toDouble(), PreviousYearsData.Percentiles);
+    RangeValues _currentRangeValues = RangeValues(_rankrange['lowerBoundRank']!.toDouble(),  _rankrange['upperBoundRank']!.toDouble());
 
 
     return Scaffold(
@@ -137,7 +190,7 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => FullJeeMainExam(paper: widget.paper,)),
+                              builder: (context) => FullJeeMainExam(Set: widget.paper,)),
                         );
                       },
                       child: MainButton(height, width, "Restart")),
@@ -177,11 +230,11 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   StatusCard(
-                      height, width, backcolor[0], maincolor[0], "correct", 15),
+                      height, width, backcolor[2], maincolor[2], "correct", widget.correctanswered),
                   StatusCard(height, width, backcolor[1], maincolor[1],
-                      "Incorrect", 9),
-                  StatusCard(height, width, backcolor[2], maincolor[2],
-                      "Not Answered", 9),
+                      "Incorrect", widget.incorrectanswered),
+                  StatusCard(height, width, backcolor[0], maincolor[0],
+                      "Not Answered", widget.notanswered),
                 ],
               ),
               const SizedBox(height: 5.0),
@@ -192,6 +245,8 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
       ),
     );
   }
+
+  
 
   //satuscard....
   Widget StatusCard(var height, var width, Color bgcolor, Color sidecolor,
@@ -263,6 +318,8 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
     );
   }
 
+  
+
   //resultcard.....
   Widget ResultCard(var height, var width, RangeValues _currentRangeValues) {
     return Container(
@@ -290,6 +347,9 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
+
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -308,6 +368,8 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
                       ),
                     ],
                   ),
+
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -315,7 +377,7 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
                       Padding(
                         padding: const EdgeInsets.only(left: 8.0, top: 4.0),
                         child: Text(
-                          "chapter",
+                          widget.subject,
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
@@ -412,12 +474,12 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      CountCard(resultcolor[0], "Percentile", 62),
-                      CountCard(resultcolor[1], "Marks", 62),
-                      CountCard(resultcolor[2], "Not Answered", 62),
+                      CountCard(resultcolor[0], "Percentile", percentile.abs()),
+                      CountCard(resultcolor[1], "Marks", widget.marks.toDouble()),
+                      CountCard(resultcolor[2], "Not Answered", widget.notanswered.toDouble()),
                     ],
                   ),
-                  TextContainer(height, width, 30, 47.1, 56),
+                  TextContainer(height, width, 90, percentage.abs(), widget.timetaken),
                 ],
               ),
               Column(
@@ -425,9 +487,9 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TriCicularIndicator(
-                      60,
-                      50,
-                      30,
+                      percentile,
+                      (widget.marks.toDouble()/9).abs()*10,
+                      (widget.notanswered.toDouble()/10).abs()*10,
                       resultcolor[0],
                       opporesultcolor[0],
                       resultcolor[1],
@@ -559,7 +621,7 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
     );
   }
 
-  Widget CountCard(Color _Bgcolor, final String text, int count) {
+  Widget CountCard(Color _Bgcolor, final String text, double count) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Container(
@@ -672,31 +734,31 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            QuestionRow(height, width, QuestionCount[0]),
-            QuestionRow(height, width, QuestionCount[1]),
-            QuestionRow(height, width, QuestionCount[2]),
-            QuestionRow(height, width, QuestionCount[3]),
-            QuestionRow(height, width, QuestionCount[4]),
-            QuestionRow(height, width, QuestionCount[5]),
-            QuestionRow(height, width, QuestionCount[6]),
-            QuestionRow(height, width, QuestionCount[7]),
-            QuestionRow(height, width, QuestionCount[8]),
-            QuestionRow(height, width, QuestionCount[9]),
-            QuestionRow(height, width, QuestionCount[10]),
-            QuestionRow(height, width, QuestionCount[11]),
-            QuestionRow(height, width, QuestionCount[12]),
-            QuestionRow(height, width, QuestionCount[13]),
-            QuestionRow(height, width, QuestionCount[14]),
-            QuestionRow(height, width, QuestionCount[15]),
-            QuestionRow(height, width, QuestionCount[16]),
-            QuestionRow(height, width, QuestionCount[17]),
+            QuestionRow(height, width, QuestionCount[0], _QuestionCount[0]),
+            QuestionRow(height, width, QuestionCount[1], _QuestionCount[1]),
+            QuestionRow(height, width, QuestionCount[2], _QuestionCount[2]),
+            QuestionRow(height, width, QuestionCount[3], _QuestionCount[3]),
+            QuestionRow(height, width, QuestionCount[4], _QuestionCount[4]),
+            QuestionRow(height, width, QuestionCount[5], _QuestionCount[5]),
+            QuestionRow(height, width, QuestionCount[6], _QuestionCount[6]),
+            QuestionRow(height, width, QuestionCount[7], _QuestionCount[7]),
+            QuestionRow(height, width, QuestionCount[8], _QuestionCount[8]),
+            QuestionRow(height, width, QuestionCount[9], _QuestionCount[9]),
+            QuestionRow(height, width, QuestionCount[10], _QuestionCount[10]),
+            QuestionRow(height, width, QuestionCount[11], _QuestionCount[11]),
+            QuestionRow(height, width, QuestionCount[12], _QuestionCount[12]),
+            QuestionRow(height, width, QuestionCount[13], _QuestionCount[13]),
+            QuestionRow(height, width, QuestionCount[14], _QuestionCount[14]),
+            QuestionRow(height, width, QuestionCount[15], _QuestionCount[15]),
+            QuestionRow(height, width, QuestionCount[16], _QuestionCount[16]),
+            QuestionRow(height, width, QuestionCount[17], _QuestionCount[17]),
           ],
         ),
       ),
     );
   }
 
-  Widget QuestionRow(var height, var width, List<String> count) {
+  Widget QuestionRow(var height, var width, List<String> count, List<int> Count) {
     return Container(
       height: 90,
       width: width * 0.85,
@@ -704,21 +766,26 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SquareContainer(height, width, count[0], maincolor[0], backcolor[0]),
-          SquareContainer(height, width, count[1], maincolor[0], backcolor[0]),
-          SquareContainer(height, width, count[2], maincolor[0], backcolor[0]),
-          SquareContainer(height, width, count[3], maincolor[0], backcolor[0]),
-          SquareContainer(height, width, count[4], maincolor[0], backcolor[0]),
+          SquareContainer(height, width, count[0], maincolor[0], backcolor[0], Count[0]),
+          SquareContainer(height, width, count[1], maincolor[0], backcolor[0], Count[1]),
+          SquareContainer(height, width, count[2], maincolor[0], backcolor[0], Count[2]),
+          SquareContainer(height, width, count[3], maincolor[0], backcolor[0], Count[3]),
+          SquareContainer(height, width, count[4], maincolor[0], backcolor[0], Count[4]),
         ],
       ),
     );
   }
 
+
+
   Widget SquareContainer(
-      var height, var width, String text, Color maincolor, Color backcolor) {
+      var height, var width, String text, Color maincolor, Color backcolor, int index) {
     return InkWell(
       onTap: () {
-        
+          Navigator.pushNamed(context, 'explanationscreen', arguments: {
+          'paper': widget.paper,
+          'index': (index - 1),
+        });
       },
       child: Padding(
         padding: const EdgeInsets.all(5.0),
@@ -726,7 +793,7 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
           height: height * 0.07,
           width: width * 0.14,
           decoration: BoxDecoration(
-            color: backcolor,
+            color: widget.Questioncolor[index - 1][0],
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Center(
@@ -736,7 +803,7 @@ class _FulltestjeemainresultState extends State<Fulltestjeemainresult> {
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
                 fontFamily: "Poppins",
-                color: maincolor,
+                color: widget.Questioncolor[index - 1][1],
               ),
             ),
           ),

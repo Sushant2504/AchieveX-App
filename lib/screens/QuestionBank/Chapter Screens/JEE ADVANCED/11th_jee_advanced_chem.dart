@@ -1,6 +1,20 @@
 import 'package:achievex/screens/QuestionBank/Chapter%20Screens/JEE%20MAIN/11th_jee_main_chem.dart';
+import 'package:achievex/screens/QuestionBank/chapter_names.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+
+
+List<List<String>> class_11_jee_main = [
+  physics11th,
+  chemistry11th,
+  maths11th,
+];
+
+List<List<String>> class_12_jee_main = [
+  physics12th,
+  chemistry12th,
+  maths12th,
+];
 
 class SubjectjeeadvancedoneScreen extends StatefulWidget {
  

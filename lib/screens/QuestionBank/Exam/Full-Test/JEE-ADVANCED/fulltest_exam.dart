@@ -1,8 +1,11 @@
+import 'package:achievex/screens/QuestionBank/Exam/Chapterwise/logic.dart';
+import 'package:achievex/screens/QuestionBank/Exam/Full-Test/all_questions.dart';
 import 'package:achievex/screens/QuestionBank/Exam/Full-Test/JEE-ADVANCED/fulltest_result.dart';
 import 'package:achievex/screens/QuestionBank/Exam/Full-Test/JEE-MAIN/fulltest_result.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:achievex/screens/QuestionBank/Exam/Chapterwise/constants.dart';
+import 'package:achievex/screens/QuestionBank/Exam/Full-Test/constants.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 
 //tag colors........
@@ -19,6 +22,7 @@ List<Color> TagContainermainColor = [
 ];
 
 // backcolors......
+
 List<Color> backcolor = [
   HexColor('#E1FFE8'),
   HexColor('#FFE0E0'),
@@ -38,7 +42,119 @@ List<Color> OptionColors = [
   HexColor('#009B21'),
 ];
 
-// answered questions record...
+
+
+List<List<Color>> _QuestionColor = [
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
+];
+
+//all ques info
+
+final int _TotalQuestions = 90;
+late int _QuestionNumber = 1;
+late int _answered = 0;
+late int _notanswered = 90;
+late int _CorrectAnswered = 0;
+late int _NotCorrectAnswered = 0;
+late int _IncorrectAnswered = 0;
+late int todolater = 0;
+
+late int minutes;
+late int seconds;
+
+dynamic time;
+
+// list of colors..
+
 
 List<bool> _Answered = [
   false,
@@ -133,7 +249,209 @@ List<bool> _Answered = [
   false,
 ];
 
-// todolater records ....
+List<bool> _Correctanswered = [
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+];
+
+List<bool> _NotCorrectanswered = [
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+];
 
 List<bool> _todolater = [
   false,
@@ -226,61 +544,30 @@ List<bool> _todolater = [
   false,
   false,
   false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
 ];
 
-//all ques info
-late int _TotalQuestions = 30;
-late int _QuestionNumber = 1;
-List<bool> _answered = List.filled(30, false);
-late int _Answer = 0;
-late int _NotAnswered = _TotalQuestions - _Answer;
-late int _CorrectAnswered = 0;
-late int _IncorrectAnswered = _TotalQuestions - _CorrectAnswered;
-late int todolater = 0;
-late int minutes;
-late int seconds;
 
-dynamic time;
 
-// list of colors..
-
-List<List<Color>> ColorMenu = [
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-  [HexColor('#5C76FF'), HexColor('#D8DEFF')],
-];
+//
 
 Color optionbgcolor = Colors.white;
 Color optioniconbgcolor = HexColor('#FFFFFF');
 Color optioniconcolor = HexColor('#446EDB');
 bool check = true;
+late double elapsedTime;
+late String elapsedTimeStr;
+late double? _remainingTime;
+
+var marks;
 
 //
 final Color optioncardbgcolor = HexColor('#E1FFE8');
@@ -303,6 +590,116 @@ List<String> Options = [
   'B',
   'C',
   'D',
+];
+
+
+List<bool> _checked = [
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+];
+
+
+List<List<Color>> QNavigationcolor = [
+  [HexColor('#E1FFE8'), HexColor('#005813')],
+  [HexColor('#FFE0E0'), HexColor('#BB1010')],
+  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
 ];
 
 List<List<String>> QuestionCount = [
@@ -347,14 +744,6 @@ List<List<int>> questioncount = [
   [86, 87, 88, 89, 90],
 ];
 
-//question navigator colors....
-List<List<Color>> QNavigationcolor = [
-  [HexColor('#E1FFE8'), HexColor('#005813')],
-  [HexColor('#FFE0E0'), HexColor('#BB1010')],
-  [HexColor('#E9ECFF'), HexColor('#5C76FF')],
-];
-
-// visited indicator list.....
 List<List<bool>> _visited = [
   [false, false, false, false, false],
   [false, false, false, false, false],
@@ -372,20 +761,15 @@ List<List<bool>> _visited = [
   [false, false, false, false, false],
   [false, false, false, false, false],
   [false, false, false, false, false],
-  [false, false, false, false, false], // Hier habe ich "versteckt" hinzugefügt
+  [false, false, false, false, false], 
   [false, false, false, false, false],
 ];
 
-List<List<dynamic>> _null = [
-  [],
-];
 
 class FullJeeAdvancedExam extends StatefulWidget {
-  List<List<dynamic>> paper;
+  final List<List<dynamic>> Set;
 
-  FullJeeAdvancedExam({
-     required this.paper,
-  });
+  FullJeeAdvancedExam({required this.Set});
 
   @override
   _FullJeeAdvancedExamState createState() => _FullJeeAdvancedExamState();
@@ -414,14 +798,34 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                 height,
                 width,
               ),
-              TextOptionsContainer(height, width),
+              widget.Set[_QuestionNumber - 1][5]
+                  ? QuestionImageContainer()
+                  : Container(
+                      height: 0,
+                      width: 0,
+                    ),
+              widget.Set[_QuestionNumber - 1][11]
+                  ? ImageoptionsContainer(height, width)
+                  : TextOptionsContainer(height, width),
               const SizedBox(height: 40.0),
               InkWell(
                 onTap: () {
+                  setState(() {
+                    marks = Marks(_CorrectAnswered, _NotCorrectAnswered);
+                  });
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => fulltestjeeadvancedresult()),
+                        builder: (context) => Fulltestjeeadvancedresult(
+                              paper: widget.Set,
+                              Questioncolor: _QuestionColor,
+                              marks: marks,
+                              notanswered: _notanswered,
+                              correctanswered: _CorrectAnswered,
+                              incorrectanswered: _NotCorrectAnswered,
+                              timetaken: elapsedTimeStr,
+                              subject: "jeeadvanced",
+                      )),
                   );
                 },
                 child: MainButton(height, width),
@@ -433,30 +837,66 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                 children: [
                   InkWell(
                     onTap: () {
-                      setState() {
+                      setState(() {
                         if (_QuestionNumber > 1) {
                           _QuestionNumber--;
                         }
+
+                       if (_Answered[_QuestionNumber - 1] == false &&
+                            _checked[_QuestionNumber - 1] == false) {
+                          _notanswered--;
+                          _checked[_QuestionNumber - 1] == true;
+                        }
+                        
                         print("decrement");
-                      }
+                      });
                     },
                     child: SmallButton(height, width, true,
                         "assets/images/back.png", "Previous"),
                   ),
                   InkWell(
                     onTap: () {
-                      setState() {
-                        _QuestionNumber++;
-                      }
+                      setState(() {
+
+                        _todolater[_QuestionNumber - 1] = true;
+
+                        if (_QuestionNumber < 90) {
+                          _QuestionNumber++;
+                        }
+
+
+                         if (_Answered[_QuestionNumber - 1] == false &&
+                            _checked[_QuestionNumber - 1] == false) {
+                          _notanswered--;
+                          _checked[_QuestionNumber - 1] == true;
+                        }
+                        
+
+                        todolater++;
+
+                        print("Increment");
+
+
+                      });
                     },
                     child: SmallButton(height, width, true,
                         "assets/images/do_it_later.png", "Do It Later"),
                   ),
                   InkWell(
                     onTap: () {
-                      if (_QuestionNumber < 30) {
-                        _QuestionNumber++;
-                      }
+                      setState(() {
+                        if (_QuestionNumber < 90) {
+                          _QuestionNumber++;
+                        }
+
+                         if (_Answered[_QuestionNumber - 1] == false &&
+                            _checked[_QuestionNumber - 1] == false) {
+                          _notanswered--;
+                          _checked[_QuestionNumber - 1] == true;
+                        }
+
+
+                      });
 
                       print("Increment");
                     },
@@ -468,6 +908,25 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
               const SizedBox(height: 10.0),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget QuestionImageContainer() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.15,
+        width: MediaQuery.of(context).size.width * 0.9,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.black, width: 1.0),
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        child: Image.network(
+          widget.Set[_QuestionNumber - 1][6],
+          fit: BoxFit.cover,
+          // color: Colors.white,
         ),
       ),
     );
@@ -512,8 +971,8 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SmallTagContainer("subject", TagContainerbgcolor[0],
-                    TagContainermainColor[0]),
+                SmallTagContainer(widget.Set[_QuestionNumber - 1][1],
+                    TagContainerbgcolor[0], TagContainermainColor[0]),
                 _countdown(TagContainerbgcolor[1], TagContainermainColor[1]),
                 SmallTagContainer(
                     "Quite", TagContainerbgcolor[2], TagContainermainColor[2]),
@@ -525,8 +984,11 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
     );
   }
 
-  //optionscontainer.....
 
+
+  //optionscontainer
+
+  //image option box ....
   Widget ImageoptionsContainer(var height, var width) {
     return Container(
       height: height * 0.5,
@@ -540,32 +1002,210 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                OptionBox(height, width, Options[0], "yes"),
-                OptionBox(height, width, Options[1], "yes"),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      optionnavigation[_QuestionNumber - 1][0][4] = true;
+
+                      optionnavigation[_QuestionNumber - 1][1][4] = false;
+
+                      optionnavigation[_QuestionNumber - 1][2][4] = false;
+
+                      optionnavigation[_QuestionNumber - 1][3][4] = false;
+
+                      if (widget.Set[_QuestionNumber - 1][17] == Options[0]) {
+                        _Correctanswered[_QuestionNumber - 1] = true;
+                        _CorrectAnswered++;
+
+                        _QuestionColor[_QuestionNumber - 1] =
+                            QNavigationcolor[2];
+                      } else if (_NotCorrectanswered[_QuestionNumber - 1] ==
+                          false) {
+                        _NotCorrectanswered[_QuestionNumber - 1] = true;
+                        _NotCorrectAnswered++;
+                        _QuestionColor[_QuestionNumber - 1] =
+                            QNavigationcolor[1];
+                      }
+
+                      if (_Answered[_QuestionNumber - 1] == false) {
+                        _Answered[_QuestionNumber - 1] = true;
+                        _answered++;
+                      }
+                    });
+                  },
+                  child: OptionBox(
+                    height,
+                    width,
+                    Options[0],
+                    widget.Set[_QuestionNumber - 1][12],
+                    optionnavigation[_QuestionNumber - 1][0][0],
+                    optionnavigation[_QuestionNumber - 1][0][1],
+                    optionnavigation[_QuestionNumber - 1][0][2],
+                    optionnavigation[_QuestionNumber - 1][0][3],
+                    optionnavigation[_QuestionNumber - 1][0][4],
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      optionnavigation[_QuestionNumber - 1][0][4] = false;
+
+                      optionnavigation[_QuestionNumber - 1][1][4] = true;
+
+                      optionnavigation[_QuestionNumber - 1][2][4] = false;
+
+                      optionnavigation[_QuestionNumber - 1][3][4] = false;
+
+                      if (widget.Set[_QuestionNumber - 1][17] == Options[0]) {
+                        _Correctanswered[_QuestionNumber - 1] = true;
+                        _CorrectAnswered++;
+
+                        _QuestionColor[_QuestionNumber - 1] =
+                            QNavigationcolor[2];
+                      } else if (_NotCorrectanswered[_QuestionNumber - 1] ==
+                          false) {
+                        _NotCorrectanswered[_QuestionNumber - 1] = true;
+                        _NotCorrectAnswered++;
+                        _QuestionColor[_QuestionNumber - 1] =
+                            QNavigationcolor[1];
+                      }
+
+                      if (_Answered[_QuestionNumber - 1] == false) {
+                        _Answered[_QuestionNumber - 1] = true;
+                        _answered++;
+                      }
+                    });
+                  },
+                  child: OptionBox(
+                    height,
+                    width,
+                    Options[1],
+                    widget.Set[_QuestionNumber - 1][13],
+                    optionnavigation[_QuestionNumber - 1][1][0],
+                    optionnavigation[_QuestionNumber - 1][1][1],
+                    optionnavigation[_QuestionNumber - 1][1][2],
+                    optionnavigation[_QuestionNumber - 1][1][3],
+                    optionnavigation[_QuestionNumber - 1][1][4],
+                  ),
+                ),
               ]),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                OptionBox(height, width, Options[2], "yes"),
-                OptionBox(height, width, Options[3], "yes"),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      optionnavigation[_QuestionNumber - 1][0][4] = false;
+
+                      optionnavigation[_QuestionNumber - 1][1][4] = false;
+
+                      optionnavigation[_QuestionNumber - 1][2][4] = true;
+
+                      optionnavigation[_QuestionNumber - 1][3][4] = false;
+
+                      if (widget.Set[_QuestionNumber - 1][17] == Options[0]) {
+                        _Correctanswered[_QuestionNumber - 1] = true;
+                        _CorrectAnswered++;
+
+                        _QuestionColor[_QuestionNumber - 1] =
+                            QNavigationcolor[2];
+                      } else if (_NotCorrectanswered[_QuestionNumber - 1] ==
+                          false) {
+                        _NotCorrectanswered[_QuestionNumber - 1] = true;
+                        _NotCorrectAnswered++;
+                        _QuestionColor[_QuestionNumber - 1] =
+                            QNavigationcolor[1];
+                      }
+
+                      if (_Answered[_QuestionNumber - 1] == false) {
+                        _Answered[_QuestionNumber - 1] = true;
+                        _answered++;
+                      }
+                    });
+                  },
+                  child: OptionBox(
+                    height,
+                    width,
+                    Options[2],
+                    widget.Set[_QuestionNumber - 1][14],
+                    optionnavigation[_QuestionNumber - 1][2][0],
+                    optionnavigation[_QuestionNumber - 1][2][1],
+                    optionnavigation[_QuestionNumber - 1][2][2],
+                    optionnavigation[_QuestionNumber - 1][2][3],
+                    optionnavigation[_QuestionNumber - 1][2][4],
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      optionnavigation[_QuestionNumber - 1][0][4] = false;
+
+                      optionnavigation[_QuestionNumber - 1][1][4] = false;
+
+                      optionnavigation[_QuestionNumber - 1][2][4] = false;
+
+                      optionnavigation[_QuestionNumber - 1][3][4] = true;
+
+                      if (widget.Set[_QuestionNumber - 1][17] == Options[0]) {
+                        _Correctanswered[_QuestionNumber - 1] = true;
+                        _CorrectAnswered++;
+
+                        _QuestionColor[_QuestionNumber - 1] =
+                            QNavigationcolor[2];
+                      } else if (_NotCorrectanswered[_QuestionNumber - 1] ==
+                          false) {
+                        _NotCorrectanswered[_QuestionNumber - 1] = true;
+                        _NotCorrectAnswered++;
+                        _QuestionColor[_QuestionNumber - 1] =
+                            QNavigationcolor[1];
+                      }
+
+                      if (_Answered[_QuestionNumber - 1] == false) {
+                        _Answered[_QuestionNumber - 1] = true;
+                        _answered++;
+                      }
+                    });
+                  },
+                  child: OptionBox(
+                    height,
+                    width,
+                    Options[3],
+                    widget.Set[_QuestionNumber - 1][15],
+                    optionnavigation[_QuestionNumber - 1][3][0],
+                    optionnavigation[_QuestionNumber - 1][3][1],
+                    optionnavigation[_QuestionNumber - 1][3][2],
+                    optionnavigation[_QuestionNumber - 1][3][3],
+                    optionnavigation[_QuestionNumber - 1][3][4],
+                  ),
+                ),
               ]),
         ],
       ),
     );
   }
 
-  //image option box ....
+  
 
   Widget OptionBox(
-      var height, var width, final String option, final String imageUrl) {
+    var height,
+    var width,
+    final String option,
+    final String imageUrl,
+    Color color1,
+    Color color2,
+    Color color3,
+    Color color4,
+    bool check,
+  ) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding:
+          const EdgeInsets.only(left: 8.0, right: 8.0, top: 15.0, bottom: 15.0),
       child: Container(
-        height: height * 0.25,
-        width: width * 0.3,
+        height: height * 0.20,
+        width: width * 0.45,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: check ? color3 : color1,
           borderRadius: BorderRadius.circular(10.0),
           boxShadow: [
             BoxShadow(
@@ -576,27 +1216,39 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
             ),
           ],
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 20,
-              child: Text(
-                option,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontFamily: "Poopins",
-                  fontWeight: FontWeight.bold,
-                  color: OptionColors[0],
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                  radius: 15,
+                  backgroundColor: check ? color4 : color2,
+                  child: CircleAvatar(
+                    radius: 14,
+                    child: Center(
+                      child: Text(
+                        option,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Poppins",
+                          color: check ? color1 : color2,
+                        ),
+                      ),
+                    ),
+                    backgroundColor: check ? color4 : color1,
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
+              Image.network(imageUrl),
+            ]),
       ),
     );
   }
+
+
 
   Widget TextOptionsContainer(var height, var width) {
     return Padding(
@@ -612,40 +1264,38 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
             InkWell(
                 onTap: () {
                   setState(() {
-                    optionnavigation[_QuestionNumber - 1][0][0] =
-                        HexColor('#E1FFE8');
-                    optionnavigation[_QuestionNumber - 1][0][1] =
-                        HexColor('#009B21');
-                    optionnavigation[_QuestionNumber - 1][0][2] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][0][3] = false;
-                    optionnavigation[_QuestionNumber - 1][1][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][1][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][1][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][1][3] = true;
-                    optionnavigation[_QuestionNumber - 1][2][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][2][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][2][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][2][3] = true;
-                    optionnavigation[_QuestionNumber - 1][3][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][3][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][3][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][3][3] = true;
+                    optionnavigation[_QuestionNumber - 1][0][4] = true;
 
-                    _Answer++;
+                    optionnavigation[_QuestionNumber - 1][1][4] = false;
+
+                    optionnavigation[_QuestionNumber - 1][2][4] = false;
+
+                    optionnavigation[_QuestionNumber - 1][3][4] = false;
+
+                    if (widget.Set[_QuestionNumber - 1][17] == Options[0]) {
+                      _Correctanswered[_QuestionNumber - 1] = true;
+                      _CorrectAnswered++;
+
+                      _QuestionColor[_QuestionNumber - 1] = QNavigationcolor[2];
+                    } else if (_NotCorrectanswered[_QuestionNumber - 1] ==
+                        false) {
+                      _NotCorrectanswered[_QuestionNumber - 1] = true;
+                      _NotCorrectAnswered++;
+                      _QuestionColor[_QuestionNumber - 1] = QNavigationcolor[1];
+                    }
+
+                    if (_Answered[_QuestionNumber - 1] == false) {
+                      _Answered[_QuestionNumber - 1] = true;
+                      _answered++;
+                     
+                    }
                   });
                 },
                 child: OptionCard(
                   height,
                   width,
                   Options[0],
-                  sampleoptiontext[0],
+                  widget.Set[_QuestionNumber - 1][7],
                   optionnavigation[_QuestionNumber - 1][0][0],
                   optionnavigation[_QuestionNumber - 1][0][1],
                   optionnavigation[_QuestionNumber - 1][0][2],
@@ -655,40 +1305,38 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
             InkWell(
                 onTap: () {
                   setState(() {
-                    optionnavigation[_QuestionNumber - 1][0][0] =
-                        HexColor('#E1FFE8');
-                    optionnavigation[_QuestionNumber - 1][0][1] =
-                        HexColor('#009B21');
-                    optionnavigation[_QuestionNumber - 1][0][2] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][0][3] = false;
-                    optionnavigation[_QuestionNumber - 1][1][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][1][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][1][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][1][3] = true;
-                    optionnavigation[_QuestionNumber - 1][2][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][2][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][2][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][2][3] = true;
-                    optionnavigation[_QuestionNumber - 1][3][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][3][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][3][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][3][3] = true;
+                    optionnavigation[_QuestionNumber - 1][0][4] = false;
 
-                    _Answer++;
+                    optionnavigation[_QuestionNumber - 1][1][4] = true;
+
+                    optionnavigation[_QuestionNumber - 1][2][4] = false;
+
+                    optionnavigation[_QuestionNumber - 1][3][4] = false;
+
+                    if (widget.Set[_QuestionNumber - 1][17] == Options[0]) {
+                      _Correctanswered[_QuestionNumber - 1] = true;
+                      _CorrectAnswered++;
+
+                      _QuestionColor[_QuestionNumber - 1] = QNavigationcolor[2];
+                    } else if (_NotCorrectanswered[_QuestionNumber - 1] ==
+                        false) {
+                      _NotCorrectanswered[_QuestionNumber - 1] = true;
+                      _NotCorrectAnswered++;
+                      _QuestionColor[_QuestionNumber - 1] = QNavigationcolor[1];
+                    }
+
+                    if (_Answered[_QuestionNumber - 1] == false) {
+                      _Answered[_QuestionNumber - 1] = true;
+                      _answered++;
+                     
+                    }
                   });
                 },
                 child: OptionCard(
                   height,
                   width,
                   Options[1],
-                  sampleoptiontext[1],
+                  widget.Set[_QuestionNumber - 1][8],
                   optionnavigation[_QuestionNumber - 1][1][0],
                   optionnavigation[_QuestionNumber - 1][1][1],
                   optionnavigation[_QuestionNumber - 1][1][2],
@@ -698,40 +1346,38 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
             InkWell(
                 onTap: () {
                   setState(() {
-                    optionnavigation[_QuestionNumber - 1][0][0] =
-                        HexColor('#E1FFE8');
-                    optionnavigation[_QuestionNumber - 1][0][1] =
-                        HexColor('#009B21');
-                    optionnavigation[_QuestionNumber - 1][0][2] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][0][3] = false;
-                    optionnavigation[_QuestionNumber - 1][1][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][1][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][1][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][1][3] = true;
-                    optionnavigation[_QuestionNumber - 1][2][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][2][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][2][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][2][3] = true;
-                    optionnavigation[_QuestionNumber - 1][3][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][3][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][3][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][3][3] = true;
+                    optionnavigation[_QuestionNumber - 1][0][4] = false;
 
-                    _Answer++;
+                    optionnavigation[_QuestionNumber - 1][1][4] = false;
+
+                    optionnavigation[_QuestionNumber - 1][2][4] = true;
+
+                    optionnavigation[_QuestionNumber - 1][3][4] = false;
+
+                    if (widget.Set[_QuestionNumber - 1][17] == Options[0]) {
+                      _Correctanswered[_QuestionNumber - 1] = true;
+                      _CorrectAnswered++;
+
+                      _QuestionColor[_QuestionNumber - 1] = QNavigationcolor[2];
+                    } else if (_NotCorrectanswered[_QuestionNumber - 1] ==
+                        false) {
+                      _NotCorrectanswered[_QuestionNumber - 1] = true;
+                      _NotCorrectAnswered++;
+                      _QuestionColor[_QuestionNumber - 1] = QNavigationcolor[1];
+                    }
+
+                    if (_Answered[_QuestionNumber - 1] == false) {
+                      _Answered[_QuestionNumber - 1] = true;
+                      _answered++;
+                      
+                    }
                   });
                 },
                 child: OptionCard(
                   height,
                   width,
                   Options[2],
-                  sampleoptiontext[2],
+                  widget.Set[_QuestionNumber - 1][9],
                   optionnavigation[_QuestionNumber - 1][2][0],
                   optionnavigation[_QuestionNumber - 1][2][1],
                   optionnavigation[_QuestionNumber - 1][2][2],
@@ -741,45 +1387,43 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
             InkWell(
                 onTap: () {
                   setState(() {
-                    optionnavigation[_QuestionNumber - 1][0][0] =
-                        HexColor('#E1FFE8');
-                    optionnavigation[_QuestionNumber - 1][0][1] =
-                        HexColor('#009B21');
-                    optionnavigation[_QuestionNumber - 1][0][2] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][0][3] = false;
-                    optionnavigation[_QuestionNumber - 1][1][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][1][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][1][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][1][3] = true;
-                    optionnavigation[_QuestionNumber - 1][2][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][2][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][2][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][2][3] = true;
-                    optionnavigation[_QuestionNumber - 1][3][0] = Colors.white;
-                    optionnavigation[_QuestionNumber - 1][3][1] =
-                        HexColor('#FFFFFF');
-                    optionnavigation[_QuestionNumber - 1][3][2] =
-                        HexColor('#446EDB');
-                    optionnavigation[_QuestionNumber - 1][3][3] = true;
+                    optionnavigation[_QuestionNumber - 1][0][4] = false;
 
-                    _Answer++;
+                    optionnavigation[_QuestionNumber - 1][1][4] = false;
+
+                    optionnavigation[_QuestionNumber - 1][2][4] = false;
+
+                    optionnavigation[_QuestionNumber - 1][3][4] = true;
+
+                    if (widget.Set[_QuestionNumber - 1][17] == Options[0]) {
+                      _Correctanswered[_QuestionNumber - 1] = true;
+                      _CorrectAnswered++;
+
+                      _QuestionColor[_QuestionNumber - 1] = QNavigationcolor[2];
+                    } else if (_NotCorrectanswered[_QuestionNumber - 1] ==
+                        false) {
+                      _NotCorrectanswered[_QuestionNumber - 1] = true;
+                      _NotCorrectAnswered++;
+                      _QuestionColor[_QuestionNumber - 1] = QNavigationcolor[1];
+                    }
+
+                    if (_Answered[_QuestionNumber - 1] == false) {
+                      _Answered[_QuestionNumber - 1] = true;
+                      _answered++;
+                     
+                    }
                   });
                 },
                 child: OptionCard(
                   height,
                   width,
                   Options[3],
-                  sampleoptiontext[3],
-                  optionnavigation[_QuestionNumber - 1][2][0],
-                  optionnavigation[_QuestionNumber - 1][2][1],
-                  optionnavigation[_QuestionNumber - 1][2][2],
-                  optionnavigation[_QuestionNumber - 1][2][3],
-                  optionnavigation[_QuestionNumber - 1][2][4],
+                  widget.Set[_QuestionNumber - 1][10],
+                  optionnavigation[_QuestionNumber - 1][3][0],
+                  optionnavigation[_QuestionNumber - 1][3][1],
+                  optionnavigation[_QuestionNumber - 1][3][2],
+                  optionnavigation[_QuestionNumber - 1][3][3],
+                  optionnavigation[_QuestionNumber - 1][3][4],
                 )),
           ],
         ),
@@ -787,24 +1431,27 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
     );
   }
 
+
+
   //optioncards
   Widget OptionCard(
-      var height,
-      var width,
-      final String option,
-      final String optiontext,
-      Color color1,
-      Color color2,
-      Color color3,
-      Color color4,
-      bool check) {
+    var height,
+    var width,
+    final String option,
+    final String optiontext,
+    Color color1,
+    Color color2,
+    Color color3,
+    Color color4,
+    bool check,
+  ) {
     return Padding(
       padding: const EdgeInsets.all(6.0),
       child: Container(
         height: height * 0.07,
         width: width * 0.9,
         decoration: BoxDecoration(
-          color: optionbgcolor,
+          color: check ? color3 : color1,
           borderRadius: BorderRadius.circular(10.0),
           border: Border.all(color: Colors.grey),
         ),
@@ -816,8 +1463,7 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                 padding: EdgeInsets.all(8.0),
                 child: CircleAvatar(
                   radius: 21,
-                  backgroundColor:
-                      check ? optioniconcolor : HexColor('#009B21'),
+                  backgroundColor: check ? color4 : color2,
                   child: CircleAvatar(
                     radius: 20,
                     child: Center(
@@ -827,11 +1473,11 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           fontFamily: "Poppins",
-                          color: optioniconcolor,
+                          color: check ? color1 : color2,
                         ),
                       ),
                     ),
-                    backgroundColor: optioniconbgcolor,
+                    backgroundColor: check ? color4 : color1,
                   ),
                 ),
               ),
@@ -842,7 +1488,7 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                   fontSize: 16,
                   fontWeight: FontWeight.normal,
                   fontFamily: "Poppins",
-                  color: OptionColors[0],
+                  color: Colors.black,
                 ),
               ),
             ]),
@@ -850,12 +1496,14 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
     );
   }
 
+
+
   //QueationContainer
   Widget QuestionContainer(var height, var width) {
     return Container(
       height: height * 0.18,
       width: width * 0.9,
-      decoration: BoxDecoration(
+      decoration: BoxDecoration(  
         color: Colors.white,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
@@ -878,7 +1526,7 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "chapter ",
+                    widget.Set[_QuestionNumber - 1][0],
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -891,7 +1539,7 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                     backgroundColor: Colors.black,
                   ),
                   Text(
-                    " Question",
+                    " Question ${widget.Set[_QuestionNumber - 1][2]}",
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
@@ -905,7 +1553,7 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
             const SizedBox(height: 2.0),
             Center(
               child: Text(
-                "Question",
+                widget.Set[_QuestionNumber - 1][3],
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.normal,
@@ -919,6 +1567,7 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
   }
 
   // info tags ...
+
   Widget _countdown(Color bgcolor, Color _color) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
@@ -932,10 +1581,18 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
         child: Countdown(
           seconds: 3 * 60 * 60, // 3 hours in seconds
           build: (BuildContext context, double time) {
+            _remainingTime = time;
             int hours = (time / 3600).floor();
             int minutes = ((time - (hours * 3600)) / 60).floor();
             int seconds = (time - (hours * 3600) - (minutes * 60)).toInt();
 
+            double elapsedTime = 3600 - _remainingTime!;
+
+            // Format elapsed time (optional)
+            int elapsedMinutes = (elapsedTime ~/ 60).toInt();
+            int elapsedSeconds = (elapsedTime % 60).toInt();
+            elapsedTimeStr =
+                '${elapsedMinutes.toString().padLeft(2, '0')}:${elapsedSeconds.toString().padLeft(2, '0')}';
             return Center(
               child: Text(
                 '${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
@@ -949,12 +1606,49 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
           },
           interval: const Duration(milliseconds: 100),
           onFinished: (dynamic time) {
+            setState(() {
+              marks = Marks(_CorrectAnswered, _NotCorrectAnswered);
+            });
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => fulltestjeeadvancedresult()),
+                  builder: (context) => Fulltestjeeadvancedresult(
+                        paper: widget.Set,
+                        Questioncolor: _QuestionColor,
+                        marks: marks,
+                        notanswered: _notanswered,
+                        correctanswered: _CorrectAnswered,
+                        incorrectanswered: _NotCorrectAnswered,
+                        timetaken: elapsedTimeStr,
+                        subject: "jeeadvanced",
+                )),
             );
           },
+        ),
+      ),
+    );
+  }
+
+  Widget BigTagContainer(String text, Color bgcolor, Color color) {
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: Container(
+        height: 25,
+        width: 120,
+        decoration: BoxDecoration(
+          color: bgcolor,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.normal,
+              fontFamily: "Poppins",
+              color: color,
+            ),
+          ),
         ),
       ),
     );
@@ -1035,6 +1729,7 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
   }
 
   //small buttonns....
+
   Widget SmallButton(
       var height, var width, bool top, final String imageUrl, String text) {
     return Padding(
@@ -1164,10 +1859,12 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      'allquestions',
-                    );
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AllQuestions(
+                                  paper: widget.Set,
+                    )));
                   },
                   child: TagContainer(
                       height, width, "Question Paper", "assets/images/tag.png"),
@@ -1228,9 +1925,9 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     StatusCard(height, width, backcolor[0], maincolor[0],
-                        statusnames[0], _Answer),
+                        statusnames[0], _answered),
                     StatusCard(height, width, backcolor[1], maincolor[1],
-                        statusnames[1], _NotAnswered),
+                        statusnames[1], _notanswered),
                   ],
                 ),
                 Row(
@@ -1285,8 +1982,7 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                 ),
                 const SizedBox(height: 5.0),
                 Center(
-                  child:
-                      BigTagContainer("Physics", Colors.orange, Colors.white),
+                  child: BigTagContainer("Maths", Colors.orange, Colors.white),
                 ),
                 const SizedBox(height: 10.0),
                 QuestionMenu1(height, width),
@@ -1294,15 +1990,15 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
                   height: 10.0,
                 ),
                 Center(
-                  child:
-                      BigTagContainer("Chemistry", Colors.green, Colors.white),
+                  child: BigTagContainer("Physics", Colors.green, Colors.white),
                 ),
                 QuestionMenu2(height, width),
                 const SizedBox(
                   height: 10.0,
                 ),
                 Center(
-                  child: BigTagContainer("Maths", Colors.blue, Colors.white),
+                  child:
+                      BigTagContainer("Chemistry", Colors.blue, Colors.white),
                 ),
                 QuestionMenu3(height, width),
               ],
@@ -1323,10 +2019,10 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
           borderRadius: BorderRadius.circular(10.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.5), // Shadow color
-              spreadRadius: 3, // How much the shadow spreads
-              blurRadius: 3, // How blurry the shadow is
-              offset: Offset(0, 3), // Changes position of shadow
+              color: Colors.grey.withOpacity(0.5), 
+              spreadRadius: 3, 
+              blurRadius: 3, 
+              offset: Offset(0, 3), 
             ),
           ],
         ),
@@ -1412,84 +2108,7 @@ class _FullJeeAdvancedExamState extends State<FullJeeAdvancedExam> {
     );
   }
 
-  Widget BigTagContainer(String text, Color bgcolor, Color color) {
-    return Padding(
-      padding: const EdgeInsets.all(4.0),
-      child: Container(
-        height: 25,
-        width: 120,
-        decoration: BoxDecoration(
-          color: bgcolor,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.normal,
-              fontFamily: "Poppins",
-              color: color,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 
-  // Widget QuestionMenu(var height, var width) {
-  //   return Padding(
-  //     padding: const EdgeInsets.all(10.0),
-  //     child: Container(
-  //       width: width * 0.8,
-  //       decoration: BoxDecoration(
-  //         color: Colors.white,
-  //         borderRadius: BorderRadius.circular(10.0),
-  //         boxShadow: [
-  //           BoxShadow(
-  //             color: Colors.grey.withOpacity(0.5), // Shadow color
-  //             spreadRadius: 3, // How much the shadow spreads
-  //             blurRadius: 3, // How blurry the shadow is
-  //             offset: Offset(0, 3), // Changes position of shadow
-  //           ),
-  //         ],
-  //       ),
-  //       child: Column(
-  //         mainAxisAlignment: MainAxisAlignment.center,
-  //         crossAxisAlignment: CrossAxisAlignment.center,
-  //         children: [
-  //           QuestionRow(height, width, QuestionCount[0]),
-  //           QuestionRow(height, width, QuestionCount[1]),
-  //           QuestionRow(height, width, QuestionCount[2]),
-  //           QuestionRow(height, width, QuestionCount[3]),
-  //           QuestionRow(height, width, QuestionCount[4]),
-  //           QuestionRow(height, width, QuestionCount[5]),
-  //           QuestionRow(height, width, QuestionCount[6]),
-  //           QuestionRow(height, width, QuestionCount[7]),
-  //           QuestionRow(height, width, QuestionCount[8]),
-  //           QuestionRow(height, width, QuestionCount[9]),
-  //           QuestionRow(height, width, QuestionCount[10]),
-  //           QuestionRow(height, width, QuestionCount[11]),
-  //           QuestionRow(height, width, QuestionCount[12]),
-  //           QuestionRow(height, width, QuestionCount[13]),
-  //           QuestionRow(height, width, QuestionCount[14]),
-  //           QuestionRow(height, width, QuestionCount[15]),
-  //           QuestionRow(height, width, QuestionCount[16]),
-  //           QuestionRow(height, width, QuestionCount[17]),
-  //           QuestionRow(height, width, QuestionCount[18]),
-  //           QuestionRow(height, width, QuestionCount[19]),
-  //           QuestionRow(height, width, QuestionCount[20]),
-  //           QuestionRow(height, width, QuestionCount[21]),
-  //           QuestionRow(height, width, QuestionCount[22]),
-  //           QuestionRow(height, width, QuestionCount[23]),
-  //           QuestionRow(height, width, QuestionCount[24]),
-  //           QuestionRow(height, width, QuestionCount[25]),
-  //           QuestionRow(height, width, QuestionCount[26]),
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
 
   Widget QuestionRow(
       var height, var width, List<String> count, List<int> questionCount) {

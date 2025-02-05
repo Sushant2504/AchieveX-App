@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+
+
 class ExaplanationScreen extends StatelessWidget {
      final List<List<dynamic>> paper;
      final int index;
@@ -8,7 +10,7 @@ class ExaplanationScreen extends StatelessWidget {
      ExaplanationScreen({
        required this.paper,
        required this.index,
-       super.key, required ,
+       super.key, 
      });
 
 
@@ -97,6 +99,8 @@ class ExaplanationScreen extends StatelessWidget {
                       
                     ],
                   ),
+
+
                   margin: const EdgeInsets.only(top: 20, right: 18, left: 18),
                   child: Padding(
                     padding: const EdgeInsets.all(15.0),
@@ -113,6 +117,8 @@ class ExaplanationScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+
                 const SizedBox(
                   height: 95.0,
                 ),
@@ -131,12 +137,15 @@ class ExaplanationScreen extends StatelessWidget {
         ),
       ),
     );
-    
-    
 }
 
 
-    Widget _Button(String text, IconData? icon) {
+
+
+
+
+
+Widget _Button(String text, IconData? icon) {
     return Container(
       height: 70,
       width: 330,

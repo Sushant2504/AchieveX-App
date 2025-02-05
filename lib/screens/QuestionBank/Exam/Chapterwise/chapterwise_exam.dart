@@ -949,9 +949,7 @@ class _ChapterwiseExamState extends State<ChapterwiseExam> {
           onFinished: (dynamic time) {
             setState(() {
               _marks = Marks(_CorrectAnswered, _NotCorrectAnswered);
-              _percentile = calculatePercentile(
-                  _marks.toDouble(), PreviousYearsData.chapterwise);
-              _percentage = Percentage(_CorrectAnswered, _TotalQuestions);
+             
             });
 
             Navigator.pushNamed(
@@ -976,6 +974,7 @@ class _ChapterwiseExamState extends State<ChapterwiseExam> {
       ),
     );
   }
+
 
   Widget SmallTagContainer(String text, Color bgcolor, Color color) {
     return Padding(

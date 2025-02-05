@@ -22,7 +22,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
 
   @override
   Widget build(BuildContext context) {
-
+    widget.exam == "jeemain" ? checked = true : checked = false; 
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
 
@@ -95,7 +95,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2024, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,)),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2024, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,)),
                           );
                       },
                       child:  YearCard(height, width, 2024),
@@ -104,7 +104,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2023, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,)),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2023, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,)),
                           );
                       },
                       child:  YearCard(height, width, 2023),
@@ -120,7 +120,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2022, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,)),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2022, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,)),
                           );
                       },
                       child:  YearCard(height, width, 2022),
@@ -129,7 +129,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2021, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,),),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2021, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,),),
                           );
                       },
                       child:  YearCard(height, width, 2021),
@@ -145,7 +145,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2020, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,)),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2020, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,)),
                           );
                       },
                       child:  YearCard(height, width, 2020),
@@ -154,7 +154,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2019, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,)),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2019, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,)),
                           );
                       },
                       child:  YearCard(height, width, 2019),
@@ -170,7 +170,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2018, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jee_mains_2024_set_1,)),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2018, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,)),
                           );
                       },
                       child:  YearCard(height, width, 2018),
@@ -179,7 +179,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2017, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,)),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2017, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,)),
                           );
                       },
                       child:  YearCard(height, width, 2017),
@@ -195,7 +195,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2016, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,)),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2016, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,)),
                           );
                       },
                       child:  YearCard(height, width, 2016),
@@ -204,7 +204,7 @@ class _YearNamesScreenState extends State<YearNamesScreen> {
                       onTap: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2015, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,)),
+                            MaterialPageRoute(builder: (context) => checked ? ShiftScreen(year: year_2015, paper: jee_mains_2024_set_1,) : FullJeeAdvancedExam(Set: jee_mains_2024_set_1,)),
                           );
                       },
                       child:  YearCard(height, width, 2015),

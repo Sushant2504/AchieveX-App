@@ -1,3 +1,4 @@
+import 'package:achievex/screens/QuestionBank/Database/JEE-MAIN/Chapterwise/Maths.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:achievex/screens/QuestionBank/chapter_names.dart';
@@ -11,7 +12,7 @@ List<List<String>> class_11_neet = [
 
 List<List<String>> class_12_neet = [
   bio12th,
-  chemistry11th,
+  chemistry12th,
   physics12th,
 ];
 
@@ -85,35 +86,30 @@ class _SubjectneetfiveScreenState extends State<SubjectneetfiveScreen> {
               ),
 
 
-              _ChapterCard(1, class_12_neet[1][0]),
 
-              _ChapterCard(2, class_12_neet[1][1]),
-              
-              _ChapterCard(3, class_12_neet[1][2]),
+              _ChapterCard(1, class_12_neet[1][0], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+              _ChapterCard(2, class_12_neet[1][1], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+              _ChapterCard(3, class_12_neet[1][2], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+              _ChapterCard(4, class_12_neet[1][3], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+              _ChapterCard(5, class_12_neet[1][4], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+              _ChapterCard(6, class_12_neet[1][5], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+              _ChapterCard(7, class_12_neet[1][6], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+              _ChapterCard(8, class_12_neet[1][7], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+              _ChapterCard(9, class_12_neet[1][8], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+              _ChapterCard(10, class_12_neet[1][9], chapter_9_11_set_1,
+                  chapter_9_11_set_1, chapter_1_11_set_1),
+             
 
-              _ChapterCard(4, class_12_neet[1][3]),
-
-              _ChapterCard(5, class_12_neet[1][4]),
-
-              _ChapterCard(6, class_12_neet[1][5]),
-
-              _ChapterCard(7, class_12_neet[1][6]),
-
-              _ChapterCard(8, class_12_neet[1][7]),
-
-              _ChapterCard(9, class_12_neet[1][8]),
-
-              _ChapterCard(10, class_12_neet[1][9]),
-
-              _ChapterCard(11, class_12_neet[1][10]),
-
-              _ChapterCard(12, class_12_neet[1][11]),
-
-              _ChapterCard(13, class_12_neet[1][12]),
-
-              _ChapterCard(14, class_12_neet[1][13]),
-
-              
+             
             ],
           ),
         ),
@@ -128,79 +124,89 @@ class _SubjectneetfiveScreenState extends State<SubjectneetfiveScreen> {
   //   );
   // }
 
-  Widget _ChapterCard(final int index, String text) {
+  Widget _ChapterCard(final int index, String text, List<List<dynamic>> c1,
+      List<List<dynamic>> c2, List<List<dynamic>> c3) {
     return Padding(
       padding: EdgeInsets.all(8.0),
-      child: Container(
-        height: 70,
-        width: 330,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              offset: Offset(0, 2.0),
-              blurRadius: 5.0,
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Container(
-                height: 36,
-                width: 36,
-                decoration: BoxDecoration(
-                  color: HexColor('#D8DEFF'),
-                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 2.0),
-                      blurRadius: 5.0,
-                    ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    index.toString(),
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: "Poppins",
-                      color: HexColor('#5C76FF'),
-                    ),
-                  ),
-                ),
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, 'questionsetscreen', arguments: {
+            'chapterset1': c1,
+            'chapterset2': c2,
+            'chapterset3': c3,
+            'subject': "Chemistry",
+          });
+        },
+        child: Container(
+          height: 70,
+          width: 330,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0, 2.0),
+                blurRadius: 5.0,
               ),
-            ),
-            Container(
-              width: 170,
-
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Center(
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Container(
+                  height: 36,
+                  width: 36,
+                  decoration: BoxDecoration(
+                    color: HexColor('#D8DEFF'),
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(0, 2.0),
+                        blurRadius: 5.0,
+                      ),
+                    ],
+                  ),
+                  child: Center(
                     child: Text(
-                      text,
+                      index.toString(),
                       style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: "Poppins",
-                        color: Colors.black,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold,
+                        fontFamily: "Poppins",
+                        color: HexColor('#5C76FF'),
                       ),
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-            Image.asset("assets/images/for.png"),
-          ],
+              Container(
+                width: 170,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Text(
+                        text,
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: "Poppins",
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Image.asset("assets/images/for.png"),
+            ],
+          ),
         ),
       ),
     );

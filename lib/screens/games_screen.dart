@@ -1,4 +1,5 @@
 import 'package:achievex/provider/subscription_provider.dart';
+import 'package:achievex/screens/brain_games/Meditation/meditation_landing.dart';
 import 'package:achievex/screens/brain_games/brain_game_screen.dart';
 import 'package:achievex/screens/brain_games/neuropractice/neuro_home_screen.dart';
 import 'package:achievex/screens/widgets/premium_dialogue.dart';
@@ -315,7 +316,14 @@ class _GamesScreenState extends State<GamesScreen> {
                   height: 5,
                 ),
                 InkWell(
-                  onTap: () => Fluttertoast.showToast(msg: 'Coming Soon'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MeditationLanding(),
+                      ),
+                    );
+                  },
                   child: Image.asset('assets/images/md.png'),
                 ),
               ],

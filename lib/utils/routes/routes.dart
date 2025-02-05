@@ -247,45 +247,48 @@ class Routes {
         );
 
       //fulltest
-      case RoutesName.fulltestneet:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => FullNeetExam(),
-        );
+      // case RoutesName.fulltestneet:
+      //   return MaterialPageRoute(
+      //     builder: (BuildContext context) => FullNeetExam(),
+        // );
 
-      case RoutesName.fulltestneetresult:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => fulltestneetresult(),
-        );
+      // case RoutesName.fulltestneetresult:
+      //   return MaterialPageRoute(
+      //     builder: (BuildContext context) => fulltestneetresult(),
+        // );
 
-      case RoutesName.fulltestjeemain:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => FullNeetExam(),
-        );
+      // case RoutesName.fulltestjeemain:
+      //   return MaterialPageRoute(
+      //     builder: (BuildContext context) => FullNeetExam(),
+      //   );
 
-      case RoutesName.fulltestjeeadvanced:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => FullNeetExam(),
-        );
+      // case RoutesName.fulltestjeeadvanced:
+      //   return MaterialPageRoute(
+      //     builder: (BuildContext context) => FullNeetExam(),
+      //   );
 
       //fulltestresult....
 
-      case RoutesName.fulltestneetresult:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => FullNeetExam(),
-        );
+      // case RoutesName.fulltestneetresult:
+      //   return MaterialPageRoute(
+      //     builder: (BuildContext context) => FullNeetExam(),
+      //   );
 
-      case RoutesName.fulltestjeemainreslt:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => FullNeetExam(),
-        );
+      // case RoutesName.fulltestjeemainreslt:
+      //   return MaterialPageRoute(
+      //     builder: (BuildContext context) => FullNeetExam(),
+      //   );
 
-      case RoutesName.fulltestjeeadvancedresult:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => FullNeetExam(),
-        );
+      // case RoutesName.fulltestjeeadvancedresult:
+      //   return MaterialPageRoute(
+      //     builder: (BuildContext context) => FullNeetExam(),
+      //   );
 
       //////
-
+      ///
+      ///
+    
+      
       // jee-main
       case RoutesName.eleventh_jeemain_maths:
         return MaterialPageRoute(

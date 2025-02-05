@@ -1,7 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:achievex/screens/QuestionBank/Exam/Full-Test/JEE-MAIN/comparison_data.dart';
+
+
 
 int Marks(int correctanswered, int incorrectanswered) {
    
@@ -9,44 +10,36 @@ int Marks(int correctanswered, int incorrectanswered) {
    return marks; 
 }
 
-
 double Percentage(int correctanswered, int totalquestions) {
    double percentage = ((correctanswered / totalquestions) * 100);
    return percentage;
 }
 
-
-double calculatePercentile(double marks, dynamic chapterwise) {
-  int totalStudents = chapterwise.length; 
-  int rank = 1; // Assuming rank 1 for highest marks
-
-  for (var entry in chapterwise) {
-    if (entry['marks']! > marks) {
-      rank++;
-    }
+double calculatePercentile(double studentMarks, List<double> jeeMainsPercentiles) {
+  // Check if jeeMainsPercentiles is a list
+  if (jeeMainsPercentiles == null || jeeMainsPercentiles.isEmpty) {
+    // Handle the case where percentile data is missing (e.g., return default value or throw exception)
+    return 0.0; // Or throw an exception
   }
 
-  // Calculate percentile
-  double percentile = (1 - (rank / totalStudents)) * 100;
-
-  // Handle edge cases (percentile should not exceed 100)
-  percentile = percentile > 100 ? 100 : percentile; 
-  percentile = percentile < 0 ? 0 : percentile; 
-
-  return percentile;
+  int countBelow = 0; 
+  for (double score in jeeMainsPercentiles) {
+    if (score < studentMarks) {
+      countBelow++;
+    }
+  }
+  return (countBelow / jeeMainsPercentiles.length) * 100; 
 }
 
+Map<String, int> getRankRange(double marks, List<double> jeeMainsPercentiles) {
+  double percentile = calculatePercentile(marks, jeeMainsPercentiles); 
 
-Map<String, int> getRankRange(double marks, dynamic jeemains, dynamic chapterwise) {
-  double percentile = calculatePercentile(marks, chapterwise); 
-
-  // Calculate lower and upper bounds for percentile range
-  int totalStudents = jeemains.length; 
+  int totalStudents = jeeMainsPercentiles.length; 
   double lowerBoundPercentile = percentile - 0.5; 
   double upperBoundPercentile = percentile + 0.5; 
 
-  lowerBoundPercentile = max(0.0, lowerBoundPercentile); // Ensure lower bound is not negative
-  upperBoundPercentile = min(100.0, upperBoundPercentile); // Ensure upper bound does not exceed 100
+  lowerBoundPercentile = max(0.0, lowerBoundPercentile); 
+  upperBoundPercentile = min(100.0, upperBoundPercentile);
 
   int lowerBoundRank = (totalStudents * (100 - upperBoundPercentile) / 100).round(); 
   int upperBoundRank = (totalStudents * (100 - lowerBoundPercentile) / 100).round(); 
@@ -55,4 +48,7 @@ Map<String, int> getRankRange(double marks, dynamic jeemains, dynamic chapterwis
 }
 
 
-  
+
+
+
+

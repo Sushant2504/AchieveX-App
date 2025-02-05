@@ -19,7 +19,7 @@ List<String> physics11th = [
 
 // 12th Standard Physics
 List<String> physics12th = [
-  'Geometrical \nOptics',
+  'Geometrical \n Optics',
   'Electrostatics',
   'Gravitation',
   'Current Electricity',
@@ -127,7 +127,7 @@ List<String> maths12th = [
       'Breathing and \n Exchange of Gases',
       'Body Fluids and \n Circulation',
       'Excretory Products \n and Their Elimination',
-      'Locomotion and Movement',
+      'Locomotion and \n Movement',
       'Neural Control \n and Coordination',
       'Chemical Coordination \n and Integration',
     ];

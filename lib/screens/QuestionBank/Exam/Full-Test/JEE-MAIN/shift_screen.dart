@@ -45,7 +45,7 @@ class _ShiftScreenState extends State<ShiftScreen> {
         onTap: () {
             Navigator.push(
                context, 
-               MaterialPageRoute(builder: (context) => FullJeeMainExam(paper: widget.paper,)),
+               MaterialPageRoute(builder: (context) => FullJeeMainExam(Set: widget.paper,)),
             );
 
         },

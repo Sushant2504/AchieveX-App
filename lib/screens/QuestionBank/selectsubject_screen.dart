@@ -90,7 +90,7 @@ class _SelectsubjectScreenState extends State<SelectsubjectScreen> {
                       const Padding(
                         padding: EdgeInsets.only(top: 90.0),
                         child: Text(
-                          'Class',
+                          'Subject',
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontFamily: 'Prompt-Bold',
@@ -264,6 +264,8 @@ class _SelectsubjectScreenState extends State<SelectsubjectScreen> {
     );
   }
 
+  
+
   Widget Liner() {
     return SizedBox(
       width: 600,
@@ -274,6 +276,8 @@ class _SelectsubjectScreenState extends State<SelectsubjectScreen> {
       ),
     );
   }
+
+  
 
   void SelectScreen(int index) {
     switch (index) {
@@ -300,21 +304,21 @@ class _SelectsubjectScreenState extends State<SelectsubjectScreen> {
       case 4:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => _exam == "jeeadvanced" ? FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,) : YearNamesScreen(exam: _exam)),
+          MaterialPageRoute(builder: (context) => YearNamesScreen(exam: _exam)),
         );
         print("jee main full-test");
         break;
       case 5:
         Navigator.pushNamed(
           context,
-          'twelth_${_exam}_maths',
+          'twelth_${_exam}_phy',
         );
         print("Result for option4");
         break;
       case 6:
         Navigator.pushNamed(
           context,
-          'twelth_${_exam}_maths',
+          'twelth_${_exam}_chem',
         );
         print("Result for option4");
         break;
@@ -328,7 +332,7 @@ class _SelectsubjectScreenState extends State<SelectsubjectScreen> {
       case 8:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => _exam == "jeeadvanced" ? FullJeeAdvancedExam(paper: jeeadvanced_2024_paper1,) : YearNamesScreen(exam: _exam)),
+          MaterialPageRoute(builder: (context) =>  YearNamesScreen(exam: _exam)),
         );
         print("for the full test");
         break;
@@ -336,6 +340,8 @@ class _SelectsubjectScreenState extends State<SelectsubjectScreen> {
         print("Invalid option");
     }
   }
+
+
 
   void showMyAlertDialog(BuildContext context) {
     showDialog(
