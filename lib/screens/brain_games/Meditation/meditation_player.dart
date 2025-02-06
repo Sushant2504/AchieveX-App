@@ -1,3 +1,4 @@
+import 'package:achievex/screens/brain_games/Meditation/theme.dart';
 import 'package:achievex/screens/widgets/CustomGestureDetector.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
@@ -6,15 +7,21 @@ import '/utils/colors.dart';
 
 
 class MeditationPlayer extends StatefulWidget {
-  final String audioTitle;
-  final String audioBookImage;
-  final List episodes;
+  final String MediTitle;
+  final String MediImage;
+  final String suffix;
+  final List<dynamic> MediList;
+  final List<String> MediSubtitle;
+  final int index;
 
   const MeditationPlayer({
     super.key,
-    required this.audioTitle,
-    required this.audioBookImage,
-    required this.episodes,
+    required this.MediTitle,
+    required this.MediImage,
+    required this.suffix,
+    required this.MediList,
+    required this.MediSubtitle,
+    required this.index,
   });
 
   @override
@@ -38,8 +45,8 @@ class _MeditationPlayerState extends State<MeditationPlayer> {
   void initState() {
     super.initState();
     _audioPlayer = AudioPlayer();
-    _currentEpisode = widget.episodes[_currentEpisodeIndex]["title"]!;
-    _currentAudioSource = widget.episodes[_currentEpisodeIndex]["source"]!;
+    _currentEpisode = widget.MediSubtitle[widget.index]!;
+    _currentAudioSource = widget.MediList[widget.index]!;
 
     _audioPlayer.onPositionChanged.listen((Duration position) {
       setState(() {
@@ -55,6 +62,8 @@ class _MeditationPlayerState extends State<MeditationPlayer> {
 
     _audioPlayer.setPlaybackRate(_playbackSpeed);
   }
+
+
 
   void _togglePlayPause() {
     if (_isPlaying) {
@@ -102,8 +111,8 @@ class _MeditationPlayerState extends State<MeditationPlayer> {
   void _selectEpisode(int index) {
     setState(() {
       _currentEpisodeIndex = index;
-      _currentEpisode = widget.episodes[index]["title"]!;
-      _currentAudioSource = widget.episodes[index]["source"]!;
+      _currentEpisode = widget.MediList[widget.index]!;
+      _currentAudioSource = widget.MediList[widget.index]!;
       _isPlaying = false;
     });
     _togglePlayPause();
@@ -111,7 +120,7 @@ class _MeditationPlayerState extends State<MeditationPlayer> {
 
 
   void _playNextEpisode() {
-    if (_currentEpisodeIndex < widget.episodes.length - 1) {
+    if (_currentEpisodeIndex < widget.MediList.length - 1) {
       _selectEpisode(_currentEpisodeIndex + 1);
     }
   }
@@ -137,7 +146,7 @@ class _MeditationPlayerState extends State<MeditationPlayer> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -163,185 +172,194 @@ class _MeditationPlayerState extends State<MeditationPlayer> {
         },
         onSwipeLeft: () {},
         onSwipeRight: () {},
-        child: Stack(
-          children: [
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.48,
-                    child: Image.asset(
-                      widget.audioBookImage,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: MediaQuery.of(context).size.width * 0.13,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                top: 8.0,
-                                bottom: 10,
-                              ),
-                              child: Text(
-                                widget.audioTitle,
-                                style: const TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      showBottomMenu = !showBottomMenu;
-                                    });
-                                  },
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 15,
-                                      vertical: 3,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: AppColors.blackColor,
-                                        width: 1.5,
-                                      ),
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    child: Text(_currentEpisode),
-                                  ),
-                                ),
-                                SpeedMenu(
-                                  onSpeedSelected: updatePlaybackSpeed,
-                                ), // Use SpeedMenu widget here
-                              ],
-                            ),
-                            SliderTheme(
-                              data: SliderTheme.of(context).copyWith(
-                                thumbShape: const RoundSliderThumbShape(
-                                    enabledThumbRadius: 0),
-                                trackShape: CustomTrackShape(),
-                              ),
-                              child: Slider(
-                                value: _currentPosition.inSeconds.toDouble(),
-                                min: 0,
-                                max: _totalDuration.inSeconds.toDouble(),
-                                activeColor: AppColors.accentColor,
-                                onChanged: (value) {
-                                  _onSliderChanged(value);
-                                },
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                IconButton(
-                                  style: ButtonStyle(
-                                    iconSize: WidgetStateProperty.all(40),
-                                    shape: WidgetStateProperty.all(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                      ),
-                                    ),
-                                  ),
-                                  color: AppColors.accentColor,
-                                  iconSize: 40,
-                                  icon: const Icon(Icons.skip_previous),
-                                  onPressed: _playPreviousEpisode,
-                                ),
-                                IconButton(
-                                  style: ButtonStyle(
-                                    iconSize: WidgetStateProperty.all(33),
-                                    shape: WidgetStateProperty.all(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
-                                    ),
-                                  ),
-                                  color: AppColors.accentColor,
-                                  iconSize: 33,
-                                  icon: const Icon(Icons.replay_10),
-                                  onPressed: _rewind10Seconds,
-                                ),
-                                IconButton(
-                                  style: ButtonStyle(
-                                    iconSize: WidgetStateProperty.all(40),
-                                    backgroundColor:
-                                        const WidgetStatePropertyAll(
-                                            AppColors.accentColor),
-                                    shape: WidgetStateProperty.all(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
-                                    ),
-                                  ),
-                                  color: Colors.white,
-                                  iconSize: 40,
-                                  icon: Icon(_isPlaying
-                                      ? Icons.pause
-                                      : Icons.play_arrow),
-                                  onPressed: _togglePlayPause,
-                                ),
-                                IconButton(
-                                  style: ButtonStyle(
-                                    iconSize: WidgetStateProperty.all(33),
-                                    shape: WidgetStateProperty.all(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
-                                    ),
-                                  ),
-                                  color: AppColors.accentColor,
-                                  iconSize: 33,
-                                  icon: const Icon(Icons.forward_10),
-                                  onPressed: _fastForward10Seconds,
-                                ),
-                                IconButton(
-                                  style: ButtonStyle(
-                                    iconSize: WidgetStateProperty.all(40),
-                                    shape: WidgetStateProperty.all(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
-                                    ),
-                                  ),
-                                  color: AppColors.accentColor,
-                                  iconSize: 40,
-                                  icon: const Icon(Icons.skip_next),
-                                  onPressed: _playNextEpisode,
-                                ),
-                              ],
-                            ),
-                          ],
+        child: Container(
+          decoration: MeditationTheme.MedTheme,
+          child: Stack(
+            children: [
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(40.0),
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.48,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(40.0),
+                          child: Image.asset(
+                            widget.MediImage,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: MediaQuery.of(context).size.width * 0.13,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 8.0,
+                                  bottom: 10,
+                                ),
+                                child: Text(
+                                  widget.MediTitle,
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        showBottomMenu = !showBottomMenu;
+                                      });
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 15,
+                                        vertical: 3,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: AppColors.blackColor,
+                                          width: 1.5,
+                                        ),
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      child: Text(_currentEpisode),
+                                    ),
+                                  ),
+                                  SpeedMenu(
+                                    onSpeedSelected: updatePlaybackSpeed,
+                                  ), // Use SpeedMenu widget here
+                                ],
+                              ),
+                              SliderTheme(
+                                data: SliderTheme.of(context).copyWith(
+                                  thumbShape: const RoundSliderThumbShape(
+                                      enabledThumbRadius: 0),
+                                  trackShape: CustomTrackShape(),
+                                ),
+                                child: Slider(
+                                  value: _currentPosition.inSeconds.toDouble(),
+                                  min: 0,
+                                  max: _totalDuration.inSeconds.toDouble(),
+                                  activeColor: AppColors.accentColor,
+                                  onChanged: (value) {
+                                    _onSliderChanged(value);
+                                  },
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  IconButton(
+                                    style: ButtonStyle(
+                                      iconSize: WidgetStateProperty.all(40),
+                                      shape: WidgetStateProperty.all(
+                                        RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(30),
+                                        ),
+                                      ),
+                                    ),
+                                    color: Colors.white,
+                                    iconSize: 40,
+                                    icon: const Icon(Icons.skip_previous),
+                                    onPressed: _playPreviousEpisode,
+                                  ),
+                                  IconButton(
+                                    style: ButtonStyle(
+                                      iconSize: WidgetStateProperty.all(33),
+                                      shape: WidgetStateProperty.all(
+                                        RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(50),
+                                        ),
+                                      ),
+                                    ),
+                                    color: Colors.white,
+                                    iconSize: 33,
+                                    icon: const Icon(Icons.replay_10),
+                                    onPressed: _rewind10Seconds,
+                                  ),
+                                  IconButton(
+                                    style: ButtonStyle(
+                                      iconSize: WidgetStateProperty.all(40),
+                                      backgroundColor:
+                                          const WidgetStatePropertyAll(
+                                              Colors.black),
+                                      shape: WidgetStateProperty.all(
+                                        RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(50),
+                                        ),
+                                      ),
+                                    ),
+                                    color: Colors.white,
+                                    iconSize: 40,
+                                    icon: Icon(_isPlaying
+                                        ? Icons.pause
+                                        : Icons.play_arrow),
+                                    onPressed: _togglePlayPause,
+                                  ),
+                                  IconButton(
+                                    style: ButtonStyle(
+                                      iconSize: WidgetStateProperty.all(33),
+                                      shape: WidgetStateProperty.all(
+                                        RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(50),
+                                        ),
+                                      ),
+                                    ),
+                                    color: Colors.white,
+                                    iconSize: 33,
+                                    icon: const Icon(Icons.forward_10),
+                                    onPressed: _fastForward10Seconds,
+                                  ),
+                                  IconButton(
+                                    style: ButtonStyle(
+                                      iconSize: WidgetStateProperty.all(40),
+                                      shape: WidgetStateProperty.all(
+                                        RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(50),
+                                        ),
+                                      ),
+                                    ),
+                                    color: Colors.white,
+                                    iconSize: 40,
+                                    icon: const Icon(Icons.skip_next),
+                                    onPressed: _playNextEpisode,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            
-          ],
+              
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
 
 
 class CustomTrackShape extends RoundedRectSliderTrackShape {
